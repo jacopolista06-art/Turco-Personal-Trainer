@@ -6,9 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Andrea Turco — Personal Trainer specializzato in ipertrofia e massa muscolare. Coaching online e in presenza. Metodo scientifico, risultati reali.">
 <title>Andrea Turco — Personal Trainer</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+/* Font fallback — if Google Fonts fails, these prevent blue system-link colors */
+@font-face{font-family:'Bebas Neue';font-style:normal;font-weight:400;font-display:swap;src:local('BebasNeue-Regular'),local('Bebas Neue Regular')}
+@font-face{font-family:'DM Sans';font-style:normal;font-weight:400;font-display:swap;src:local('DMSans-Regular'),local('DM Sans Regular')}
+@font-face{font-family:'DM Mono';font-style:normal;font-weight:400;font-display:swap;src:local('DMMono-Regular'),local('DM Mono Regular')}
 /* ═══════════════════════════════════════════════
    BASE
 ═══════════════════════════════════════════════ */
@@ -16,21 +21,22 @@
 :root{
   --black:#0a0a0a;--white:#f5f0eb;--red:#c8322a;--red-dim:#7a1e18;
   --grey:#1c1c1c;--mid:#2e2e2e;--muted:#888;
-  --font-d:'Bebas Neue',sans-serif;
-  --font-b:'DM Sans',sans-serif;
-  --font-m:'DM Mono',monospace;
+  --font-d:'Bebas Neue','Arial Narrow','Impact',Arial Black,sans-serif;
+  --font-b:'DM Sans','Helvetica Neue',Helvetica,Arial,sans-serif;
+  --font-m:'DM Mono','Courier New',Courier,monospace;
   --ease-out-expo:cubic-bezier(0.16,1,0.3,1);
 }
 html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--white);font-family:var(--font-b);font-size:16px;line-height:1.6;overflow-x:hidden;cursor:none}
+body{background:var(--black);color:var(--white);font-family:var(--font-b);font-size:16px;line-height:1.6;overflow-x:hidden}
 ::selection{background:var(--red);color:var(--white)}
 ::-webkit-scrollbar{width:3px}
 ::-webkit-scrollbar-track{background:var(--black)}
 ::-webkit-scrollbar-thumb{background:var(--red)}
 
 /* ═══════════════════════════════════════════════
-CUSTOM CURSOR
+CURSOR — desktop only
 ═══════════════════════════════════════════════ */
+@media(hover:hover) and (pointer:fine){body{cursor:none}a,button{cursor:none}}
 #cursor{
 position:fixed;top:0;left:0;width:12px;height:12px;
 background:var(–red);border-radius:50%;
@@ -58,24 +64,24 @@ nav{
 position:fixed;top:0;left:0;right:0;z-index:200;
 display:flex;align-items:center;justify-content:space-between;
 padding:1.2rem 2.5rem;
-background:rgba(10,10,10,0);
-backdrop-filter:blur(0px);
-border-bottom:1px solid rgba(200,50,42,0);
+background:rgba(10,10,10,0.92);
+backdrop-filter:blur(14px);
+border-bottom:1px solid rgba(200,50,42,0.15);
 transition:background 0.4s,backdrop-filter 0.4s,border-color 0.4s;
 }
 nav.scrolled{
-background:rgba(10,10,10,0.94);
+background:rgba(10,10,10,0.97);
 backdrop-filter:blur(16px);
-border-bottom-color:rgba(200,50,42,0.18);
+border-bottom-color:rgba(200,50,42,0.25);
 }
-.nav-logo{font-family:var(–font-d);font-size:1.6rem;letter-spacing:0.08em;color:var(–white);text-decoration:none;cursor:none}
+.nav-logo{font-family:var(–font-d);font-size:1.6rem;letter-spacing:0.08em;color:var(–white);text-decoration:none}
 .nav-logo span{color:var(–red)}
 .nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{font-family:var(–font-m);font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(–muted);text-decoration:none;transition:color 0.2s;cursor:none;position:relative}
+.nav-links a{font-family:var(–font-m);font-size:0.72rem;letter-spacing:0.15em;text-transform:uppercase;color:var(–muted);text-decoration:none;transition:color 0.2s;position:relative}
 .nav-links a::after{content:’’;position:absolute;bottom:-3px;left:0;width:0;height:1px;background:var(–red);transition:width 0.3s var(–ease-out-expo)}
 .nav-links a:hover{color:var(–white)}
 .nav-links a:hover::after{width:100%}
-.nav-cta{font-family:var(–font-m);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–white);background:var(–red);border:none;padding:0.6rem 1.4rem;cursor:none;text-decoration:none;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(200,50,42,0.3)}
+.nav-cta{font-family:var(–font-m);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–white);background:var(–red);border:none;padding:0.6rem 1.4rem;cursor:none;text-decoration:none;transition:background 0.2s,transform 0.15s,box-shadow 0.2s;box-shadow:0 2px 12px rgba(200,50,42,0.3);cursor:pointer}
 .nav-cta:hover{background:#e03c33;transform:translateY(-1px);box-shadow:0 6px 20px rgba(200,50,42,0.5)}
 
 /* ═══════════════════════════════════════════════
@@ -138,7 +144,7 @@ opacity:0;animation:fadeUp 0.9s 0.55s var(–ease-out-expo) forwards;
 /* Buttons */
 .btn-primary{
 font-family:var(–font-m);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
-color:var(–white);background:var(–red);border:none;padding:1rem 2.2rem;cursor:none;
+color:var(–white);background:var(–red);border:none;padding:1rem 2.2rem;cursor:pointer;
 text-decoration:none;display:inline-block;position:relative;overflow:hidden;
 transition:transform 0.2s,box-shadow 0.2s;
 box-shadow:0 4px 20px rgba(200,50,42,0.35),0 0 0 0 rgba(200,50,42,0);
@@ -155,7 +161,7 @@ opacity:0;transition:opacity 0.3s;
 .btn-secondary{
 font-family:var(–font-m);font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;
 color:var(–muted);background:transparent;border:1px solid var(–mid);padding:1rem 2rem;
-cursor:none;text-decoration:none;display:inline-block;transition:color 0.25s,border-color 0.25s,background 0.25s;
+text-decoration:none;display:inline-block;transition:color 0.25s,border-color 0.25s,background 0.25s;
 }
 .btn-secondary:hover{color:var(–white);border-color:#666;background:rgba(255,255,255,0.03)}
 
@@ -433,7 +439,7 @@ will-change:transform;
 .contact-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:2rem}
 .contact-btn{
 font-family:var(–font-m);font-size:0.72rem;letter-spacing:0.14em;text-transform:uppercase;
-border:none;padding:1rem 1.8rem;cursor:none;text-decoration:none;
+border:none;padding:1rem 1.8rem;text-decoration:none;
 display:inline-flex;align-items:center;gap:0.6rem;
 transition:transform 0.25s var(–ease-out-expo),box-shadow 0.25s;
 position:relative;overflow:hidden;
@@ -459,11 +465,11 @@ footer{
 background:var(–black);border-top:1px solid var(–mid);
 padding:2.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;
 }
-.footer-logo{font-family:var(–font-d);font-size:1.3rem;letter-spacing:0.08em;color:var(–white);text-decoration:none;cursor:none}
+.footer-logo{font-family:var(–font-d);font-size:1.3rem;letter-spacing:0.08em;color:var(–white);text-decoration:none}
 .footer-logo span{color:var(–red)}
 .footer-copy{font-family:var(–font-m);font-size:0.65rem;letter-spacing:0.1em;color:var(–muted)}
 .footer-socials{display:flex;gap:1.5rem}
-.footer-socials a{font-family:var(–font-m);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);text-decoration:none;transition:color 0.2s;cursor:none}
+.footer-socials a{font-family:var(–font-m);font-size:0.65rem;letter-spacing:0.12em;text-transform:uppercase;color:var(–muted);text-decoration:none;transition:color 0.2s}
 .footer-socials a:hover{color:var(–white)}
 
 /* ═══════════════════════════════════════════════
@@ -495,7 +501,7 @@ REVEAL ANIMATIONS
 RESPONSIVE
 ═══════════════════════════════════════════════ */
 @media(max-width:900px){
-body{cursor:auto}
+body,a,button{cursor:auto!important}
 #cursor,#cursor-ring{display:none}
 nav{padding:1rem 1.5rem}
 .nav-links{display:none}
