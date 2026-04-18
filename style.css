@@ -1,0 +1,98 @@
+:root{
+  --black:#0a0a0a;
+  --white:#f5f0eb;
+  --red:#c8322a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  background:var(--black);
+  color:var(--white);
+  font-family:sans-serif;
+  overflow-x:hidden;
+}
+
+/* NAV */
+.nav{
+  position:fixed;
+  width:100%;
+  padding:1rem 2rem;
+  display:flex;
+  justify-content:space-between;
+  background:rgba(0,0,0,0.9);
+}
+
+.nav span{color:var(--red)}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:100vh;
+  align-items:center;
+  padding:4rem;
+}
+
+.hero img{
+  width:100%;
+}
+
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:1rem;
+  padding:1rem 2rem;
+  background:var(--red);
+}
+
+/* SCROLL BAR */
+#progress{
+  position:fixed;
+  top:0;
+  left:0;
+  height:3px;
+  background:var(--red);
+  width:0%;
+  z-index:999;
+}
+
+/* ANIMAZIONI */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:all .6s ease;
+}
+
+.reveal.visible{
+  opacity:1;
+  transform:none;
+}
+
+/* FORM */
+form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+  max-width:400px;
+}
+
+input,textarea{
+  padding:1rem;
+  background:#111;
+  border:1px solid #333;
+  color:white;
+}
+
+button{
+  background:var(--red);
+  border:none;
+  padding:1rem;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .hero{
+    grid-template-columns:1fr;
+  }
+}
