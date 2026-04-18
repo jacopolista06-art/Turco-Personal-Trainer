@@ -1,298 +1,944 @@
-<!DOCTYPE html>
+<!doctype html>
+
 <html lang="it" data-theme="dark">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0a" />
 <meta name="color-scheme" content="dark light" />
+
+<!-- SEO -->
+
 <title>TURCO · Personal Trainer a Casal Velino (SA) & Online | Andrea Turco</title>
-<meta name="description" content="Personal Trainer a Casal Velino (Salerno) e online ovunque. Scheda personalizzata, coaching 30 giorni e allenamento in presenza. Laureato in Scienze Motorie." />
-<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0a'/><text x='50' y='67' font-family='Arial Black,sans-serif' font-size='60' font-weight='900' text-anchor='middle' fill='%23c5ff00'>T</text></svg>" />
+<meta name="description" content="Personal Trainer a Casal Velino (Salerno) e online ovunque. Scheda personalizzata, coaching 30 giorni e allenamento in presenza. Laureato in Scienze Motorie. Scopri i pacchetti." />
+<meta name="keywords" content="personal trainer Casal Velino, personal trainer Salerno, coaching online, scheda allenamento, Andrea Turco, personal trainer Cilento" />
+<meta name="author" content="Andrea Turco" />
+<meta name="robots" content="index,follow,max-image-preview:large" />
+<link rel="canonical" href="https://example.com/" />
+
+<!-- Open Graph -->
+
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="it_IT" />
+<meta property="og:title" content="TURCO · Personal Trainer a Casal Velino & Online" />
+<meta property="og:description" content="Allenamenti in presenza, schede personalizzate e coaching online. Risultati reali, metodo scientifico. Prenota ora." />
+<meta property="og:image" content="images/hero.jpg" />
+<meta property="og:url" content="https://example.com/" />
+
+<!-- Twitter -->
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="TURCO · Personal Trainer" />
+<meta name="twitter:description" content="Personal Trainer a Casal Velino (SA) e online. Metodo, risultati, zero scuse." />
+<meta name="twitter:image" content="images/hero.jpg" />
+
+<!-- Favicon inline (niente richieste extra) -->
+
+<link rel="icon" href='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%230a0a0a"/><text x="50" y="67" font-family="Arial Black,sans-serif" font-size="60" font-weight="900" text-anchor="middle" fill="%23c5ff00">T</text></svg>' />
+
+<!-- Fonts: Archivo Black (display bold sportivo) + Inter (body) -->
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@500;700;900&family=Inter:wght@400;500;600;700&display=swap" />
+
+<!-- Structured Data: LocalBusiness -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness","HealthAndBeautyBusiness","SportsActivityLocation"],
+  "name": "TURCO Personal Trainer",
+  "image": "images/hero.jpg",
+  "description": "Personal Trainer a Casal Velino (SA) e online. Allenamenti in presenza, schede personalizzate, coaching 30 giorni.",
+  "email": "andrea.turco1234@gmail.com",
+  "telephone": "+39 328 762 5772",
+  "founder": { "@type": "Person", "name": "Andrea Turco", "alumniOf": "Università degli Studi di Salerno" },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Casal Velino",
+    "addressRegion": "SA",
+    "addressCountry": "IT"
+  },
+  "areaServed": ["Casal Velino","Salerno","Cilento","Online"],
+  "sameAs": ["https://www.instagram.com/andrea_xtr"],
+  "priceRange": "€€",
+  "makesOffer": [
+    { "@type": "Offer", "name": "ONLINE", "price": "50", "priceCurrency": "EUR", "description": "Scheda + coaching online 30 giorni" },
+    { "@type": "Offer", "name": "HYBRID", "price": "80", "priceCurrency": "EUR", "description": "Scheda + coaching online + check-in, primo mese" },
+    { "@type": "Offer", "name": "IN PRESENZA", "price": "20", "priceCurrency": "EUR", "description": "Lezione singola di personal training a Casal Velino" }
+  ]
+}
+</script>
+
 <style>
-:root{
-  --bg:#0a0a0a;--bg-elev:#131313;--surface:#1c1c1c;--line:rgba(255,255,255,.08);
-  --line-strong:rgba(255,255,255,.18);--text:#f5f5f5;--text-dim:#a8a8a8;
-  --accent:#c5ff00;--accent-ink:#0a0a0a;
-  --fd:'Archivo Black',sans-serif;--fh:'Archivo',sans-serif;--fb:'Inter',sans-serif;
-  --nav-h:70px;--r:14px;--rl:22px;
-}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{font-family:var(--fb);color:var(--text);background:var(--bg);font-size:clamp(.95rem,.9rem+.25vw,1.05rem);line-height:1.55;overflow-x:hidden;-webkit-font-smoothing:antialiased}
-img{max-width:100%;height:auto;display:block}
+/* =========================================================
+   RESET & TOKENS
+   ========================================================= */
+*,*::before,*::after{box-sizing:border-box}
+*{margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth;tab-size:4}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+img,svg,video{display:block;max-width:100%;height:auto}
+button,input,textarea,select{font:inherit;color:inherit;background:none;border:0}
+button{cursor:pointer}
 a{color:inherit;text-decoration:none}
-button{cursor:pointer;font-family:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+ul{list-style:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
 
-/* CONTAINER */
-.container{width:min(100% - 2rem,1240px);margin-inline:auto;position:relative;z-index:2}
+:root{
+  /* Palette DARK (default) */
+  --bg:#0a0a0a;
+  --bg-elev:#131313;
+  --bg-soft:#181818;
+  --surface:#1c1c1c;
+  --line:rgba(255,255,255,.08);
+  --line-strong:rgba(255,255,255,.18);
+  --text:#f5f5f5;
+  --text-dim:#a8a8a8;
+  --text-mute:#6b6b6b;
+  --accent:#c5ff00;           /* lime sportivo */
+  --accent-ink:#0a0a0a;       /* testo su accent */
+  --accent-glow:rgba(197,255,0,.35);
+  --danger:#ff4d4d;
+  --ok:#3ddc84;
 
-/* NAV */
-.nav{position:fixed;top:0;left:0;right:0;height:var(--nav-h);z-index:100;background:rgba(10,10,10,.85);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line);transition:background .35s,border-color .35s}
-.nav.is-scrolled{background:rgba(10,10,10,.92);border-color:var(--line)}
-.nav__inner{display:flex;align-items:center;justify-content:space-between;height:100%;gap:1rem}
-.brand{display:flex;flex-direction:column;line-height:1;gap:.15rem}
-.brand__name{font-family:var(--fd);font-size:1.65rem;letter-spacing:-.01em}
-.brand__name .dot{color:var(--accent)}
-.brand__tag{font-family:var(--fh);font-weight:700;font-size:.64rem;letter-spacing:.42em;text-transform:uppercase;color:var(--text-dim)}
-.nav__menu{display:flex;align-items:center;gap:2rem}
-.nav__menu a{font-family:var(--fh);font-weight:600;font-size:.95rem;position:relative;transition:color .2s}
-.nav__menu a::after{content:'';position:absolute;left:0;bottom:-6px;height:2px;width:0;background:var(--accent);transition:width .25s}
-.nav__menu a:hover::after,.nav__menu a.is-active::after{width:100%}
-.nav__toggle{display:none;background:none;border:1px solid var(--line-strong);width:42px;height:42px;border-radius:50%;color:#fff;font-size:1.2rem;transition:border-color .2s}
-.nav__toggle:hover{border-color:var(--accent);color:var(--accent)}
-@media(max-width:860px){
-  .nav__menu{position:fixed;top:var(--nav-h);left:0;right:0;bottom:0;background:var(--bg);flex-direction:column;justify-content:center;gap:1.8rem;transform:translateY(-120%);transition:transform .4s cubic-bezier(.7,0,.2,1);z-index:99}
-  .nav__menu.is-open{transform:translateY(0)}
-  .nav__menu a{font-family:var(--fd);font-size:2rem;text-transform:uppercase}
-  .nav__toggle{display:block}
-  .nav__cta-desktop{display:none!important}
+  /* Tipografia */
+  --font-display:"Archivo Black",Impact,"Arial Black",sans-serif;
+  --font-head:"Archivo",system-ui,sans-serif;
+  --font-body:"Inter",system-ui,-apple-system,sans-serif;
+
+  /* Scala fluida */
+  --step--1:clamp(.78rem,.75rem + .15vw,.88rem);
+  --step-0:clamp(.95rem,.9rem + .25vw,1.05rem);
+  --step-1:clamp(1.1rem,1rem + .5vw,1.3rem);
+  --step-2:clamp(1.3rem,1.15rem + .7vw,1.7rem);
+  --step-3:clamp(1.6rem,1.35rem + 1.2vw,2.3rem);
+  --step-4:clamp(1.9rem,1.55rem + 1.8vw,3.3rem);
+  --step-5:clamp(2.2rem,1.7rem + 2.5vw,5rem);
+  --step-6:clamp(2.5rem,1.8rem + 3.5vw,7.5rem);
+  --step-7:clamp(2.8rem,1.8rem + 6vw,10rem);
+
+  /* Spazi & radii */
+  --r-xs:6px; --r-sm:10px; --r-md:14px; --r-lg:22px; --r-xl:32px;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.35);
+  --shadow-md:0 20px 50px -20px rgba(0,0,0,.7);
+  --shadow-glow:0 10px 40px -10px var(--accent-glow);
+
+  /* Misure */
+  --container:1240px;
+  --gutter:clamp(1rem,3vw,2rem);
+  --nav-h:70px;
 }
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;gap:.7rem;padding:1.05rem 1.6rem;background:var(--accent);color:var(--accent-ink);border-radius:999px;font-family:var(--fh);font-weight:800;text-transform:uppercase;font-size:.95rem;letter-spacing:.04em;transition:transform .2s,box-shadow .2s;border:none;cursor:pointer;white-space:nowrap}
-.btn:hover{transform:translateY(-2px);box-shadow:0 10px 40px -10px rgba(197,255,0,.35)}
+/* LIGHT theme override */
+html[data-theme="light"]{
+  --bg:#f5f5f3;
+  --bg-elev:#ffffff;
+  --bg-soft:#eeeeea;
+  --surface:#ffffff;
+  --line:rgba(0,0,0,.08);
+  --line-strong:rgba(0,0,0,.22);
+  --text:#0a0a0a;
+  --text-dim:#4a4a4a;
+  --text-mute:#868686;
+  --accent:#0a0a0a;           /* in light l'accent "principale" diventa nero per contrasto estremo */
+  --accent-ink:#c5ff00;       /* mentre il lime resta come evidenziatore */
+  --accent-glow:rgba(10,10,10,.18);
+}
+/* In light, il giallo-lime lo usiamo come highlight, non come fondo CTA, per gusto: */
+html[data-theme="light"] .highlight-mark{background:#c5ff00;color:#0a0a0a}
+
+body{
+  font-family:var(--font-body);
+  color:var(--text);
+  background:var(--bg);
+  font-size:var(--step-0);
+  overflow-x:hidden;
+  background-image:
+    radial-gradient(1200px 600px at 90% -10%,rgba(197,255,0,.06),transparent 60%),
+    radial-gradient(900px 500px at -10% 30%,rgba(197,255,0,.04),transparent 60%);
+}
+html[data-theme="light"] body{
+  background-image:
+    radial-gradient(1200px 600px at 90% -10%,rgba(197,255,0,.35),transparent 60%),
+    radial-gradient(900px 500px at -10% 30%,rgba(10,10,10,.04),transparent 60%);
+}
+
+/* Grain overlay globale (dà texture premium) */
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  pointer-events:none;
+  z-index:1;
+  opacity:.06;
+  mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* =========================================================
+   UTILITIES
+   ========================================================= */
+.container{width:min(100% - var(--gutter)*2,var(--container));margin-inline:auto;position:relative;z-index:2}
+.section{padding-block:clamp(4rem,8vw,8rem);position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:var(--font-head);font-weight:700;
+  font-size:var(--step--1);letter-spacing:.22em;text-transform:uppercase;
+  color:var(--text-dim);
+  flex-wrap:wrap;
+  max-width:100%;
+}
+.eyebrow::before{
+  content:"";width:32px;height:1px;background:var(--accent);
+  flex:none;
+}
+@media (max-width:500px){
+  .eyebrow{letter-spacing:.12em;font-size:.72rem}
+}
+.h-display{
+  font-family:var(--font-display);
+  font-weight:400; /* Archivo Black ha già un peso pieno */
+  line-height:.92;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+}
+.h-section{
+  font-family:var(--font-display);
+  font-size:var(--step-5);
+  line-height:.95;
+  letter-spacing:-.02em;
+  text-transform:uppercase;
+}
+.lead{color:var(--text-dim);font-size:var(--step-1);max-width:60ch;line-height:1.5}
+.highlight-mark{
+  background:var(--accent);color:var(--accent-ink);
+  padding:.02em .18em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+
+/* Bottoni */
+.btn{
+  --_bg:var(--accent);--_ink:var(--accent-ink);
+  display:inline-flex;align-items:center;gap:.7rem;
+  padding:1.05rem 1.6rem;
+  font-family:var(--font-head);font-weight:800;
+  font-size:var(--step-0);letter-spacing:.04em;text-transform:uppercase;
+  background:var(--_bg);color:var(--_ink);
+  border-radius:999px;
+  transition:transform .2s ease,box-shadow .3s ease,background .2s ease;
+  position:relative;overflow:hidden;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-2px);box-shadow:var(--shadow-glow)}
 .btn:active{transform:translateY(0)}
-.btn svg{width:1.1em;height:1.1em}
-.btn--ghost{background:transparent;color:var(--text);border:1.5px solid var(--line-strong)}
-.btn--ghost:hover{background:var(--text);color:var(--bg);border-color:var(--text)}
-.btn--sm{padding:.7rem 1.1rem;font-size:.85rem}
+.btn svg{width:1.1em;height:1.1em;transition:transform .25s ease}
+.btn:hover svg{transform:translateX(4px)}
+.btn--ghost{--_bg:transparent;--_ink:var(--text);border:1.5px solid var(--line-strong)}
+.btn--ghost:hover{--_bg:var(--text);--_ink:var(--bg);border-color:var(--text)}
+html[data-theme="light"] .btn--ghost:hover{--_bg:var(--text);--_ink:#c5ff00}
+.btn--sm{padding:.7rem 1.1rem;font-size:var(--step--1)}
 
-/* SECTIONS */
-.section{padding-block:clamp(4rem,8vw,7rem);position:relative}
-
-/* EYEBROW + TITLES */
-.eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--fh);font-weight:700;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.75rem}
-.eyebrow::before{content:'';width:32px;height:1px;background:var(--accent);flex-shrink:0}
-.h-section{font-family:var(--fd);font-size:clamp(1.8rem,5.5vw,3.2rem);line-height:.95;text-transform:uppercase;letter-spacing:-.02em}
-.lead{color:var(--text-dim);font-size:clamp(1rem,1.8vw,1.15rem);max-width:58ch;line-height:1.6}
-.highlight{background:var(--accent);color:var(--accent-ink);padding:.02em .15em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-
-/* HERO */
-.hero{padding-top:calc(var(--nav-h) + 2.5rem);padding-bottom:clamp(3rem,6vw,5rem)}
-.hero__grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2rem,5vw,4rem);align-items:end}
-.hero__title{font-family:var(--fd);font-size:clamp(2.8rem,10vw,5.5rem);line-height:.88;text-transform:uppercase;letter-spacing:-.03em}
-.hero__title .accent{color:var(--accent)}
-.hero__title .outline{-webkit-text-stroke:2px var(--text);color:transparent}
-.hero__title .tilted{display:inline-block;transform:rotate(-2deg) translateY(-.04em)}
-.hero__meta{display:flex;flex-wrap:wrap;gap:1rem 2rem;margin-top:1.4rem;color:var(--text-dim);font-size:.95rem}
-.hero__meta span{display:inline-flex;align-items:center;gap:.5rem}
-.hero__lead{margin-top:1.4rem;max-width:52ch;color:var(--text-dim);line-height:1.7}
-.hero__lead strong{color:var(--text)}
-.hero__ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
-.hero__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--line)}
-.hero__stats dt{font-family:var(--fd);font-size:clamp(1.4rem,4vw,2.2rem);color:var(--accent);line-height:1}
-.hero__stats dd{font-size:.75rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.12em;margin-top:.35rem;font-weight:600}
-
-/* HERO IMAGE */
-.hero__media{position:relative;aspect-ratio:4/5;max-width:480px;margin-left:auto;width:100%}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:center 25%;border-radius:var(--rl);filter:contrast(1.05) saturate(.92);position:relative;z-index:2}
-.hero__media::before{content:'';position:absolute;inset:-14px;border:1px solid var(--line-strong);border-radius:var(--rl);transform:rotate(-2.5deg);z-index:1}
-.hero__badge{position:absolute;bottom:-18px;left:-18px;background:var(--accent);color:var(--accent-ink);padding:.85rem 1rem;border-radius:var(--r);font-family:var(--fd);text-transform:uppercase;box-shadow:0 20px 50px -20px rgba(0,0,0,.7);transform:rotate(-4deg);z-index:3;display:flex;align-items:center;gap:.6rem;line-height:1}
-.hero__badge strong{font-size:1.7rem;display:block}
-.hero__badge span{font-size:.6rem;letter-spacing:.2em;font-weight:700;display:block;margin-top:2px}
-
-@media(max-width:900px){
-  .hero__grid{grid-template-columns:1fr}
-  .hero__media{margin-inline:auto;max-width:380px}
-  .hero__ctas{flex-direction:column;width:100%}
-  .hero__ctas .btn{width:100%;justify-content:center;text-align:center}
+/* Divider animato */
+.tape{
+  background:var(--accent);color:var(--accent-ink);
+  overflow:hidden;
+  border-block:1px solid var(--accent);
+  padding:.9rem 0;
+  position:relative;
 }
-
-/* TAPE */
-.tape{background:var(--accent);color:var(--accent-ink);padding:.85rem 0;overflow:hidden;border-block:1px solid var(--accent)}
-.tape__track{display:flex;gap:3rem;font-family:var(--fd);font-size:1.05rem;text-transform:uppercase;white-space:nowrap;animation:scrollTape 40s linear infinite;width:max-content}
+.tape__track{
+  display:flex;gap:3rem;
+  font-family:var(--font-display);
+  font-size:var(--step-2);
+  text-transform:uppercase;letter-spacing:.05em;
+  white-space:nowrap;
+  animation:scroll-x 40s linear infinite;
+  width:max-content;
+}
 .tape__track span{display:inline-flex;align-items:center;gap:3rem}
-.tape__track span::after{content:'★';color:var(--accent-ink);opacity:.45}
-@keyframes scrollTape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){.tape__track{animation:none}}
+.tape__track span::after{content:"★";color:var(--accent-ink);opacity:.5}
+@keyframes scroll-x{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.tape__track{animation:none}}
 
-/* METHOD */
-.method__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--rl);overflow:hidden;margin-top:2rem}
-.method__card{background:var(--bg-elev);padding:2rem 1.5rem;display:flex;flex-direction:column;gap:1rem;transition:background .25s}
-.method__card:hover{background:var(--surface)}
-.method__num{font-family:var(--fd);font-size:2.6rem;color:var(--accent);line-height:1;opacity:.75}
-.method__card h3{font-family:var(--fd);font-size:1.35rem;text-transform:uppercase;line-height:1}
-.method__card p{color:var(--text-dim);font-size:.93rem;line-height:1.6}
-.unisa-badge{margin-top:2rem;padding:1rem 1.2rem;background:var(--surface);border-radius:var(--r);border-left:3px solid var(--accent);font-size:.78rem;font-weight:700;color:var(--text-dim);letter-spacing:.12em;text-transform:uppercase}
+/* =========================================================
+   NAV
+   ========================================================= */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--nav-h);
+  display:flex;align-items:center;
+  transition:background .35s ease,border-color .35s ease,backdrop-filter .35s ease;
+  border-bottom:1px solid transparent;
+}
+.nav.is-scrolled{
+  background:color-mix(in oklab,var(--bg) 85%,transparent);
+  backdrop-filter:saturate(150%) blur(16px);
+  -webkit-backdrop-filter:saturate(150%) blur(16px);
+  border-bottom-color:var(--line);
+}
+/* Su mobile la nav ha SEMPRE sfondo opaco quando scrollata per evitare overlap dei titoli */
+@media (max-width:860px){
+  .nav{background:var(--bg)}
+  .nav.is-scrolled{
+    background:var(--bg);
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+  }
+}
+.nav__inner{
+  width:min(100% - var(--gutter)*2,var(--container));
+  margin-inline:auto;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+}
+.brand{display:flex;flex-direction:column;line-height:1;gap:.15rem}
+.brand__name{
+  font-family:var(--font-display);
+  font-size:1.65rem;letter-spacing:-.01em;
+}
+.brand__tag{
+  font-family:var(--font-head);font-weight:700;
+  font-size:.64rem;letter-spacing:.42em;text-transform:uppercase;
+  color:var(--text-dim);
+}
+.brand__dot{color:var(--accent)}
+.nav__menu{display:flex;align-items:center;gap:2rem}
+.nav__menu a{
+  font-family:var(--font-head);font-weight:600;
+  font-size:.95rem;letter-spacing:.02em;
+  position:relative;
+  transition:color .2s ease;
+}
+.nav__menu a::after{
+  content:"";position:absolute;left:0;bottom:-6px;
+  height:2px;width:0;background:var(--accent);
+  transition:width .25s ease;
+}
+.nav__menu a:hover::after,.nav__menu a.is-active::after{width:100%}
+.nav__actions{display:flex;align-items:center;gap:.6rem}
+.icon-btn{
+  width:40px;height:40px;border-radius:999px;
+  display:inline-grid;place-items:center;
+  border:1px solid var(--line);
+  background:var(--bg-elev);
+  transition:transform .2s ease,border-color .2s ease,background .2s ease;
+}
+.icon-btn:hover{transform:translateY(-2px);border-color:var(--accent);color:var(--accent)}
+.icon-btn svg{width:18px;height:18px}
 
-/* ABOUT */
-.about__grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,5rem);align-items:center;margin-top:2.5rem}
-.about__media{position:relative;aspect-ratio:3/4;max-width:420px;width:100%}
-.about__media img{width:100%;height:100%;object-fit:cover;object-position:center top;border-radius:var(--rl);filter:contrast(1.05)}
-.about__media::after{content:'';position:absolute;inset:auto -20px -20px auto;width:60%;height:60%;border:1px solid var(--accent);border-radius:var(--rl);z-index:-1}
-.about__stamp{position:absolute;top:-20px;left:-20px;width:130px;height:130px;background:var(--bg);border:1px solid var(--line-strong);border-radius:50%;display:grid;place-items:center;font-family:var(--fd);text-transform:uppercase;font-size:.62rem;letter-spacing:.08em;text-align:center;line-height:1.3;animation:spin 24s linear infinite;z-index:3}
-.about__stamp span{color:var(--accent);font-weight:900}
-@keyframes spin{to{transform:rotate(360deg)}}
-@media(prefers-reduced-motion:reduce){.about__stamp{animation:none}}
-.about__creds{display:grid;gap:.8rem;margin-top:2rem;padding:1.5rem;border:1px solid var(--line);border-radius:var(--r);background:var(--bg-elev)}
-.about__cred{display:flex;gap:.9rem;align-items:flex-start;font-size:.92rem}
-.about__cred svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:2px}
-.about__cred strong{display:block;font-family:var(--fh);font-weight:700;font-size:.93rem}
-.about__cred span{color:var(--text-dim);font-size:.85rem}
-
-@media(max-width:900px){
-  .about__grid{grid-template-columns:1fr}
-  .about__media{margin-inline:auto;order:-1}
+/* Mobile nav */
+.nav__toggle{display:none}
+@media (max-width:860px){
+  .nav__menu{
+    position:fixed;inset:var(--nav-h) 0 0 0;
+    background:var(--bg);
+    flex-direction:column;justify-content:center;gap:1.2rem;
+    transform:translateY(-120%);
+    transition:transform .4s cubic-bezier(.7,0,.2,1);
+    border-bottom:1px solid var(--line);
+    padding-bottom:3rem;
+    z-index:99;
+    /* assicuro copertura piena anche con blur del nav */
+    background-color:var(--bg);
+    background-image:
+      radial-gradient(800px 400px at 50% 30%,rgba(197,255,0,.07),transparent 60%);
+  }
+  .nav__menu a{font-family:var(--font-display);font-size:2rem;letter-spacing:-.01em;text-transform:uppercase}
+  .nav__menu.is-open{transform:translateY(0)}
+  .nav__toggle{display:inline-grid}
+  .nav__cta-desktop{display:none}
+  /* quando menu aperto, blocco scroll della pagina sotto */
+  body.is-nav-open{overflow:hidden}
 }
 
-/* PRICING */
-.pricing{background:var(--bg-elev);position:relative}
-.pricing::before,.pricing::after{content:'';position:absolute;left:0;right:0;height:1px;background:var(--line)}
-.pricing::before{top:0}.pricing::after{bottom:0}
-.pricing__head{text-align:center;max-width:680px;margin-inline:auto;margin-bottom:3.5rem}
-.pricing__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;align-items:stretch}
-.plan{position:relative;display:flex;flex-direction:column;padding:2.2rem 1.8rem;background:var(--bg);border:1px solid var(--line);border-radius:var(--rl);transition:transform .3s,border-color .25s}
-.plan:hover{transform:translateY(-5px)}
-.plan--featured{background:var(--text);color:var(--bg);border:2px solid var(--accent);transform:scale(1.03);box-shadow:0 10px 40px -10px rgba(197,255,0,.25)}
-.plan--featured:hover{transform:scale(1.03) translateY(-5px)}
-.plan--featured .plan__desc,.plan--featured .plan__unit,.plan--featured .plan__price{color:inherit}
-.plan--featured .plan__desc{color:rgba(10,10,10,.6)}
-.plan--featured .plan__price{border-color:rgba(10,10,10,.12)}
-.plan__badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--accent);color:var(--accent-ink);font-family:var(--fd);font-size:.68rem;letter-spacing:.18em;padding:.4rem .9rem;border-radius:999px;white-space:nowrap;text-transform:uppercase}
-.plan__name{font-family:var(--fd);font-size:1.5rem;text-transform:uppercase;letter-spacing:-.01em}
-.plan__desc{color:var(--text-dim);font-size:.9rem;margin-top:.4rem;min-height:3em;line-height:1.5}
-.plan__price{display:flex;align-items:baseline;gap:.4rem;margin-top:1.4rem;padding-block:1.2rem;border-top:1px solid var(--line);border-bottom:1px solid var(--line);font-family:var(--fd)}
-.plan__price .currency{font-size:1.3rem;line-height:1}
-.plan__price .amount{font-size:3.2rem;line-height:1;letter-spacing:-.02em}
-.plan__unit{font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-left:.3rem;font-family:var(--fh)}
-.plan__list{display:grid;gap:.7rem;margin-block:1.6rem;flex:1;list-style:none}
-.plan__li{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem}
-.plan__li svg{flex:none;width:18px;height:18px;color:var(--accent);margin-top:3px;flex-shrink:0}
-.plan .btn{width:100%;justify-content:center;margin-top:auto}
+/* =========================================================
+   HERO
+   ========================================================= */
+.hero{
+  position:relative;
+  padding-top:calc(var(--nav-h) + clamp(1.2rem,4vw,4rem));
+  padding-bottom:clamp(2.5rem,5vw,5rem);
+  overflow:hidden;
+  isolation:isolate;
+}
+.hero__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:clamp(2rem,4vw,4rem);
+  align-items:end;
+}
+@media (max-width:900px){.hero__grid{grid-template-columns:1fr}}
 
-@media(max-width:600px){
-  .pricing__grid{grid-template-columns:1fr;max-width:400px;margin-inline:auto}
-  .plan--featured{transform:none;order:-1}
-  .plan--featured:hover{transform:translateY(-5px)}
+.hero__title{
+  font-size:var(--step-7);
+  font-family:var(--font-display);
+  line-height:.88;letter-spacing:-.035em;text-transform:uppercase;
+  /* impedisco overflow orizzontale su mobile */
+  overflow-wrap:break-word;
+  word-break:break-word;
+  hyphens:auto;
+}
+@media (max-width:480px){
+  .hero__title{font-size:clamp(2.4rem,12vw,4rem);letter-spacing:-.025em}
+}
+.hero__title .outline{
+  -webkit-text-stroke:2px var(--text);
+  color:transparent;
+}
+html[data-theme="light"] .hero__title .outline{-webkit-text-stroke-color:var(--text)}
+.hero__title .accent{color:var(--accent)}
+.hero__title .tilted{display:inline-block;transform:rotate(-2deg) translateY(-.05em)}
+
+.hero__meta{
+  display:flex;flex-wrap:wrap;gap:1rem 2rem;
+  margin-top:1.4rem;
+  color:var(--text-dim);font-size:.95rem;
+}
+.hero__meta span{display:inline-flex;align-items:center;gap:.5rem}
+.hero__meta svg{width:1rem;height:1rem;color:var(--accent)}
+
+.hero__lead{margin-top:1.4rem;max-width:52ch}
+
+.hero__ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+
+.hero__stats{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;
+  margin-top:2.5rem;padding-top:2rem;
+  border-top:1px solid var(--line);
+  max-width:520px;
+}
+.hero__stats dt{
+  font-family:var(--font-display);font-size:var(--step-3);color:var(--accent);
+  line-height:1;
+}
+.hero__stats dd{
+  font-size:.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.12em;
+  margin-top:.4rem;font-weight:600;
 }
 
-/* TESTIMONIALS */
-.testi__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:2.5rem}
-.testi__card{padding:1.8rem;border:1px solid var(--line);border-radius:var(--rl);background:var(--bg-elev);position:relative;display:flex;flex-direction:column}
-.testi__card::before{content:'"';position:absolute;top:8px;left:16px;font-family:Georgia,serif;font-size:4rem;color:var(--accent);line-height:1;opacity:.4}
-.testi__text{font-style:italic;color:var(--text-dim);font-size:.95rem;line-height:1.65;flex:1;padding-top:1.8rem}
-.testi__person{display:flex;align-items:center;gap:.9rem;padding-top:1rem;margin-top:1rem;border-top:1px solid var(--line)}
-.testi__avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent-ink));display:grid;place-items:center;font-family:var(--fd);color:var(--accent-ink);font-size:1.1rem}
-.testi__person strong{display:block;font-family:var(--fh);font-weight:700;font-size:.92rem}
-.testi__person span{color:var(--text-dim);font-size:.78rem}
-
-/* FAQ */
-.faq__grid{display:grid;grid-template-columns:1fr 1.4fr;gap:3rem;align-items:start;margin-top:2rem}
-.faq__list{display:grid;gap:.8rem}
-details.faq{border:1px solid var(--line);border-radius:var(--r);background:var(--bg-elev);overflow:hidden;transition:border-color .25s}
-details.faq[open]{border-color:var(--accent)}
-details.faq summary{list-style:none;cursor:pointer;padding:1.1rem 1.3rem;font-family:var(--fh);font-weight:700;font-size:1rem;display:flex;justify-content:space-between;align-items:center}
-details.faq summary::-webkit-details-marker{display:none}
-details.faq summary::after{content:'+';font-family:var(--fd);font-size:1.5rem;color:var(--accent);transition:transform .25s;flex-shrink:0}
-details.faq[open] summary::after{transform:rotate(45deg)}
-details.faq > div{padding:0 1.3rem 1.3rem;color:var(--text-dim);font-size:.92rem;line-height:1.65}
-details.faq > div strong{color:var(--text)}
-@media(max-width:800px){
-  .faq__grid{grid-template-columns:1fr}
+/* Hero media (immagine + cornice + tilt) */
+.hero__media{
+  position:relative;
+  aspect-ratio:4/5;
+  max-width:520px;
+  margin-left:auto;
+  width:100%;
 }
-
-/* CTA FINAL */
-.cta-final{padding:clamp(3rem,7vw,5rem) clamp(1.5rem,4vw,3rem);background:var(--text);color:var(--bg);border-radius:var(--rl);margin-top:3rem;text-align:center;overflow:hidden;position:relative}
-.cta-final__title{font-family:var(--fd);font-size:clamp(2rem,6vw,3.5rem);line-height:.92;text-transform:uppercase;letter-spacing:-.02em;max-width:14ch;margin:0 auto}
-.cta-final__title em{font-style:normal;color:var(--accent)}
-.cta-final p{max-width:48ch;margin:1rem auto 2rem;color:rgba(10,10,10,.65);font-size:clamp(1rem,1.8vw,1.1rem)}
-.cta-final__ctas{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center}
-.cta-final__ctas .btn{font-size:.88rem;padding:.9rem 1.5rem}
-/* Fix: make ghost buttons visible on white/light background */
-.cta-final .btn--ghost{border-color:rgba(10,10,10,.3);color:var(--bg)}
-.cta-final .btn--ghost:hover{background:var(--bg);color:var(--text);border-color:var(--bg)}
-
-/* CONTACT FORM */
-.quick-form{display:grid;gap:.8rem;margin-top:1.8rem;max-width:460px;margin-inline:auto}
-.quick-form .field{position:relative}
-.quick-form input,.quick-form textarea{width:100%;padding:.95rem 1.1rem;border:1px solid rgba(10,10,10,.15);border-radius:var(--r);background:rgba(10,10,10,.06);color:var(--bg);font-size:.95rem;font-family:var(--fb);transition:border-color .2s,background .2s}
-.quick-form input::placeholder,.quick-form textarea::placeholder{color:rgba(10,10,10,.4)}
-.quick-form input:focus,.quick-form textarea:focus{outline:none;border-color:var(--accent);background:rgba(10,10,10,.1)}
-.quick-form textarea{resize:vertical;min-height:80px}
-.quick-form .error-msg{color:#ff4d4d;font-size:.8rem;min-height:1.2em;margin-top:.25rem}
-.quick-form .field.has-error input,.quick-form .field.has-error textarea{border-color:#ff4d4d}
-.quick-form .ok-msg{display:none;padding:1rem;border-radius:var(--r);background:rgba(61,220,132,.12);color:#3ddc84;border:1px solid rgba(61,220,132,.3);font-size:.9rem}
-.quick-form.is-sent .ok-msg{display:block}
-.quick-form.is-sent .field,.quick-form.is-sent button{display:none}
-
-/* FOOTER */
-footer{padding:3rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem}
-.foot__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem;margin-bottom:2rem}
-.foot__brand .brand__name{font-family:var(--fd);font-size:2rem}
-.foot__brand p{color:var(--text-dim);font-size:.88rem;margin-top:.6rem;max-width:34ch;line-height:1.6}
-.foot__col h4{font-family:var(--fd);text-transform:uppercase;font-size:.82rem;letter-spacing:.12em;margin-bottom:1rem;color:var(--accent)}
-.foot__col a{display:block;padding:.25rem 0;color:var(--text-dim);font-size:.88rem;transition:color .15s}
-.foot__col a:hover{color:var(--accent)}
-.foot__bottom{margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--line);text-align:center;color:var(--text-dim);font-size:.78rem}
-@media(max-width:800px){
-  .foot__grid{grid-template-columns:1fr;text-align:center}
-  .foot__brand p{margin-inline:auto}
+@media (max-width:900px){.hero__media{margin-inline:auto}}
+.hero__media::before{
+  content:"";position:absolute;inset:-14px;
+  border:1px solid var(--line-strong);
+  border-radius:var(--r-lg);
+  transform:rotate(-2.5deg);
+  z-index:1;
 }
+.hero__media__img{
+  position:relative;z-index:2;
+  width:100%;height:100%;
+  object-fit:cover;object-position:center 30%;
+  border-radius:var(--r-lg);
+  filter:contrast(1.05) saturate(.9);
+  background:
+    linear-gradient(135deg,#151515 0%,#0a0a0a 100%); /* fallback se manca img */
+}
+.hero__media__badge{
+  position:absolute;z-index:3;
+  bottom:-18px;left:-18px;
+  background:var(--accent);color:var(--accent-ink);
+  padding:.9rem 1.1rem;border-radius:var(--r-md);
+  font-family:var(--font-display);
+  text-transform:uppercase;
+  line-height:1;
+  box-shadow:var(--shadow-md);
+  transform:rotate(-4deg);
+  display:flex;align-items:center;gap:.7rem;
+}
+.hero__media__badge strong{font-size:1.8rem;display:block}
+.hero__media__badge span{font-size:.65rem;letter-spacing:.2em;font-weight:700;display:block;margin-top:2px}
 
-/* FLOATING BUTTONS */
-.direct{position:fixed;right:clamp(1rem,3vw,1.6rem);bottom:clamp(1rem,3vw,1.6rem);z-index:90}
-.direct__list{display:flex;flex-direction:column;gap:.6rem;align-items:flex-end;margin-bottom:.7rem;opacity:0;transform:translateY(10px) scale(.9);pointer-events:none;transform-origin:bottom right;transition:opacity .25s,transform .25s cubic-bezier(.2,.7,.2,1)}
-.direct.is-open .direct__list{opacity:1;transform:none;pointer-events:auto}
-.direct__item{display:flex;align-items:center;gap:.6rem;background:var(--bg-elev);color:var(--text);padding:.55rem .9rem .55rem .6rem;border-radius:999px;border:1px solid var(--line);font-family:var(--fh);font-weight:600;font-size:.85rem;box-shadow:0 4px 12px rgba(0,0,0,.3);transition:transform .2s,border-color .2s,color .2s}
-.direct__item:hover{transform:translateX(-4px);border-color:var(--accent);color:var(--accent)}
-.direct__item .ico{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;font-size:.9rem;flex-shrink:0}
-.direct__item .ico.whatsapp{background:#25D366;color:#fff}
-.direct__item .ico.email{background:#EA4335;color:#fff}
-.direct__item .ico.insta{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff}
-.direct__toggle{width:60px;height:60px;border-radius:50%;background:var(--accent);color:var(--accent-ink);border:none;display:grid;place-items:center;font-size:1.6rem;font-weight:300;box-shadow:0 10px 40px -10px rgba(197,255,0,.4);position:relative;transition:transform .3s}
-.direct__toggle:hover{transform:scale(1.05)}
-.direct__pulse{position:absolute;inset:0;border-radius:50%;background:var(--accent);opacity:.5;animation:pulse 2.4s ease-out infinite}
-@keyframes pulse{0%{transform:scale(1);opacity:.5}100%{transform:scale(1.6);opacity:0}}
-@media(prefers-reduced-motion:reduce){.direct__pulse{animation:none}}
+/* Sfondo attrezzi: pattern geometrico ispirato a bilancieri/pesi */
+.hero__bg{
+  position:absolute;inset:0;z-index:-1;pointer-events:none;
+  opacity:.5;
+}
+.hero__bg svg{width:100%;height:100%}
 
-/* BACK TO TOP */
-.to-top{position:fixed;left:clamp(1rem,3vw,1.6rem);bottom:clamp(1rem,3vw,1.6rem);z-index:90;width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--bg-elev);color:var(--text);border:1px solid var(--line);opacity:0;transform:translateY(12px);pointer-events:none;transition:opacity .3s,transform .3s,border-color .2s,color .2s}
-.to-top.is-visible{opacity:1;transform:none;pointer-events:auto}
-.to-top:hover{border-color:var(--accent);color:var(--accent)}
-
-/* REVEAL */
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
 .reveal.is-in{opacity:1;transform:none}
 .reveal[data-delay="1"]{transition-delay:.08s}
 .reveal[data-delay="2"]{transition-delay:.16s}
 .reveal[data-delay="3"]{transition-delay:.24s}
 .reveal[data-delay="4"]{transition-delay:.32s}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}}
+
+/* =========================================================
+   METODO
+   ========================================================= */
+.method__head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:3rem}
+@media (max-width:800px){.method__head{grid-template-columns:1fr}}
+.method__grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  overflow:hidden;
+}
+.method__card{
+  background:var(--bg-elev);
+  padding:2rem 1.8rem;
+  display:flex;flex-direction:column;gap:1rem;
+  position:relative;
+  transition:background .25s ease;
+}
+.method__card:hover{background:var(--surface)}
+.method__num{
+  font-family:var(--font-display);
+  font-size:2.8rem;color:var(--accent);line-height:1;
+}
+.method__card h3{
+  font-family:var(--font-display);
+  font-size:var(--step-2);text-transform:uppercase;line-height:1;
+}
+.method__card p{color:var(--text-dim);font-size:.95rem}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.about{position:relative}
+.about__grid{
+  display:grid;
+  grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);
+  gap:clamp(2rem,5vw,5rem);
+  align-items:center;
+}
+@media (max-width:900px){.about__grid{grid-template-columns:1fr}}
+.about__media{
+  position:relative;
+  aspect-ratio:3/4;
+  max-width:440px;
+  width:100%;
+}
+.about__media img{
+  width:100%;height:100%;object-fit:cover;
+  border-radius:var(--r-lg);
+  filter:contrast(1.05);
+  background:linear-gradient(135deg,#2a2a2a 0%,#141414 100%);
+}
+.about__media::after{
+  content:"";position:absolute;inset:auto -20px -20px auto;
+  width:60%;height:60%;
+  border:1px solid var(--accent);border-radius:var(--r-lg);
+  z-index:-1;
+}
+.about__stamp{
+  position:absolute;top:-20px;left:-20px;
+  width:140px;height:140px;
+  background:var(--bg);border:1px solid var(--line-strong);
+  border-radius:999px;
+  display:grid;place-items:center;
+  font-family:var(--font-display);text-transform:uppercase;
+  font-size:.7rem;letter-spacing:.08em;text-align:center;
+  line-height:1.2;
+  animation:spin 22s linear infinite;
+}
+.about__stamp span{color:var(--accent)}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.about__stamp{animation:none}}
+
+.about__title{font-size:var(--step-5)}
+.about__creds{
+  display:grid;gap:.8rem;margin-top:2rem;padding:1.5rem;
+  border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--bg-elev);
+}
+.about__cred{display:flex;gap:.9rem;align-items:flex-start;font-size:.95rem}
+.about__cred svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:2px}
+.about__cred strong{display:block;font-family:var(--font-head);font-weight:700}
+.about__cred span{color:var(--text-dim);font-size:.88rem}
+
+/* =========================================================
+   PRICING
+   ========================================================= */
+.pricing{background:var(--bg-soft);position:relative}
+.pricing::before,.pricing::after{
+  content:"";position:absolute;left:0;right:0;height:1px;background:var(--line);
+}
+.pricing::before{top:0}.pricing::after{bottom:0}
+.pricing__head{text-align:center;max-width:680px;margin-inline:auto;margin-bottom:3.5rem}
+.pricing__head .lead{margin-inline:auto;margin-top:1rem}
+
+.pricing__grid{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:1.2rem;
+  align-items:stretch;
+}
+.plan{
+  position:relative;
+  display:flex;flex-direction:column;
+  padding:2.2rem 1.8rem;
+  background:var(--bg-elev);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .25s ease;
+}
+.plan:hover{transform:translateY(-4px);border-color:var(--line-strong)}
+.plan--featured{
+  background:var(--text);color:var(--bg);
+  border:2px solid var(--accent);
+  transform:scale(1.03);
+  box-shadow:var(--shadow-glow);
+}
+.plan--featured:hover{transform:scale(1.03) translateY(-4px)}
+html[data-theme="light"] .plan--featured{background:#0a0a0a;color:#f5f5f5}
+.plan--featured .plan__name,
+.plan--featured .plan__price,
+.plan--featured .plan__li{color:inherit}
+.plan--featured .plan__desc,
+.plan--featured .plan__unit{color:rgba(245,245,245,.75)}
+html[data-theme="light"] .plan--featured .plan__desc,
+html[data-theme="light"] .plan--featured .plan__unit{color:rgba(245,245,245,.75)}
+
+.plan__badge{
+  position:absolute;top:-14px;left:50%;transform:translateX(-50%);
+  background:var(--accent);color:var(--accent-ink);
+  font-family:var(--font-display);font-size:.7rem;letter-spacing:.18em;
+  padding:.4rem .9rem;border-radius:999px;
+  white-space:nowrap;text-transform:uppercase;
+}
+.plan__name{
+  font-family:var(--font-display);font-size:var(--step-2);
+  text-transform:uppercase;letter-spacing:-.01em;
+}
+.plan__desc{color:var(--text-dim);font-size:.9rem;margin-top:.4rem;min-height:2.8em}
+.plan__price{
+  display:flex;align-items:baseline;gap:.4rem;
+  margin-top:1.4rem;padding-block:1.2rem;
+  border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  font-family:var(--font-display);
+}
+.plan--featured .plan__price{border-color:rgba(245,245,245,.15)}
+.plan__price .currency{font-size:1.4rem;line-height:1}
+.plan__price .amount{font-size:3.5rem;line-height:1;letter-spacing:-.02em}
+.plan__unit{font-size:.8rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-left:.3rem;font-family:var(--font-head)}
+.plan__list{display:grid;gap:.7rem;margin-block:1.6rem;flex:1}
+.plan__li{display:flex;gap:.6rem;align-items:flex-start;font-size:.95rem}
+.plan__li svg{flex:none;width:18px;height:18px;color:var(--accent);margin-top:3px}
+.plan__li.is-muted{color:var(--text-mute);text-decoration:line-through;text-decoration-color:var(--text-mute)}
+.plan__li.is-muted svg{color:var(--text-mute);opacity:.5}
+.plan .btn{width:100%;justify-content:center}
+.plan--featured .btn--ghost{border-color:rgba(245,245,245,.3);color:#f5f5f5}
+.plan--featured .btn--ghost:hover{background:#f5f5f5;color:#0a0a0a;border-color:#f5f5f5}
+
+.pricing__foot{text-align:center;margin-top:2.5rem;color:var(--text-dim);font-size:.9rem}
+.pricing__foot strong{color:var(--text)}
+
+/* =========================================================
+   TESTIMONIALS (predisposti, placeholder commentati nell'HTML)
+   ========================================================= */
+.testi__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:3rem}
+.testi__card{
+  padding:1.8rem;
+  border:1px solid var(--line);border-radius:var(--r-lg);
+  background:var(--bg-elev);
+  display:flex;flex-direction:column;gap:1rem;
+  position:relative;
+}
+.testi__card::before{
+  content:"\201C";
+  position:absolute;top:-10px;left:18px;
+  font-family:Georgia,serif;
+  font-size:4rem;color:var(--accent);line-height:1;
+}
+.testi__text{color:var(--text);font-size:1rem;line-height:1.55;flex:1}
+.testi__person{display:flex;align-items:center;gap:.9rem;padding-top:1rem;border-top:1px solid var(--line)}
+.testi__avatar{
+  width:44px;height:44px;border-radius:999px;
+  background:linear-gradient(135deg,var(--accent) 0%,var(--text) 100%);
+  display:grid;place-items:center;
+  font-family:var(--font-display);color:var(--accent-ink);
+}
+.testi__person strong{display:block;font-family:var(--font-head);font-weight:700;font-size:.95rem}
+.testi__person span{color:var(--text-dim);font-size:.8rem}
+
+/* =========================================================
+   FAQ
+   ========================================================= */
+.faq__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:3rem;align-items:start}
+@media (max-width:800px){.faq__grid{grid-template-columns:1fr}}
+.faq__list{display:grid;gap:.8rem}
+details.faq{
+  border:1px solid var(--line);border-radius:var(--r-md);
+  background:var(--bg-elev);
+  overflow:hidden;
+  transition:border-color .25s ease;
+}
+details.faq[open]{border-color:var(--accent)}
+details.faq summary{
+  list-style:none;cursor:pointer;
+  padding:1.1rem 1.3rem;
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  font-family:var(--font-head);font-weight:700;font-size:1.02rem;
+}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::after{
+  content:"+";
+  font-family:var(--font-display);
+  font-size:1.6rem;line-height:1;color:var(--accent);
+  transition:transform .25s ease;
+}
+details.faq[open] summary::after{transform:rotate(45deg)}
+details.faq > div{
+  padding:0 1.3rem 1.3rem;
+  color:var(--text-dim);font-size:.95rem;line-height:1.6;
+}
+
+/* =========================================================
+   CTA FINALE
+   ========================================================= */
+.cta-final{
+  position:relative;
+  padding:clamp(3rem,7vw,6rem) clamp(1.5rem,4vw,4rem);
+  background:var(--text);color:var(--bg);
+  border-radius:var(--r-xl);
+  overflow:hidden;
+  isolation:isolate;
+}
+html[data-theme="light"] .cta-final{background:#0a0a0a;color:#f5f5f5}
+.cta-final__title{
+  font-family:var(--font-display);
+  font-size:var(--step-6);line-height:.92;text-transform:uppercase;letter-spacing:-.02em;
+  max-width:12ch;
+}
+.cta-final__title em{font-style:normal;color:var(--accent)}
+.cta-final p{max-width:48ch;margin-top:1.2rem;color:rgba(245,245,245,.72);font-size:var(--step-1)}
+html[data-theme="light"] .cta-final p{color:rgba(245,245,245,.72)}
+.cta-final__ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+.cta-final::after{
+  content:"T";
+  position:absolute;right:-4rem;bottom:-8rem;z-index:-1;
+  font-family:var(--font-display);
+  font-size:40rem;line-height:.8;
+  color:var(--accent);opacity:.08;
+  pointer-events:none;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:4rem}
+.foot__grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:2rem}
+@media (max-width:800px){.foot__grid{grid-template-columns:1fr}}
+.foot__brand .brand__name{font-size:2.5rem}
+.foot__brand p{color:var(--text-dim);font-size:.95rem;margin-top:1rem;max-width:36ch}
+.foot__col h4{font-family:var(--font-display);text-transform:uppercase;font-size:.9rem;letter-spacing:.1em;margin-bottom:1rem}
+.foot__col a{display:block;padding:.25rem 0;color:var(--text-dim);font-size:.92rem;transition:color .15s ease}
+.foot__col a:hover{color:var(--accent)}
+.foot__bottom{
+  margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;
+  color:var(--text-mute);font-size:.82rem;
+}
+
+/* =========================================================
+   DIRECT BUTTON (WhatsApp/Email/IG flottante)
+   ========================================================= */
+.direct{
+  position:fixed;right:clamp(1rem,3vw,1.6rem);bottom:clamp(1rem,3vw,1.6rem);
+  z-index:95;
+  display:flex;flex-direction:column;align-items:flex-end;gap:.7rem;
+}
+.direct__list{
+  display:flex;flex-direction:column;gap:.7rem;align-items:flex-end;
+  opacity:0;transform:translateY(12px) scale(.92);pointer-events:none;
+  transform-origin:bottom right;
+  transition:opacity .28s ease,transform .28s cubic-bezier(.2,.7,.2,1);
+}
+.direct.is-open .direct__list{opacity:1;transform:none;pointer-events:auto}
+.direct__item{
+  display:inline-flex;align-items:center;gap:.65rem;
+  background:#1c1c1c;color:#f5f5f5;
+  padding:.5rem .95rem .5rem .5rem;
+  border-radius:999px;
+  font-family:var(--font-head);font-weight:700;font-size:.88rem;
+  box-shadow:0 8px 24px rgba(0,0,0,.45);
+  border:1px solid rgba(255,255,255,.1);
+  transition:transform .2s ease,box-shadow .2s ease;
+  white-space:nowrap;
+}
+html[data-theme="light"] .direct__item{
+  background:#fff;color:#0a0a0a;border-color:rgba(0,0,0,.1);
+}
+.direct__item:hover{transform:translateX(-3px);box-shadow:0 10px 30px rgba(0,0,0,.55)}
+.direct__item .ico{
+  width:34px;height:34px;border-radius:999px;
+  display:inline-grid;place-items:center;
+  color:#fff;
+  flex:none;
+}
+.direct__item .ico svg{width:17px;height:17px}
+/* Colori brand ufficiali per ogni canale */
+.direct__item--wa .ico{background:#25D366}
+.direct__item--mail .ico{background:linear-gradient(135deg,#c5ff00 0%,#9fdc00 100%);color:#0a0a0a}
+.direct__item--ig .ico{
+  background:
+    radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+}
+
+/* Toggle principale */
+.direct__toggle{
+  width:62px;height:62px;border-radius:999px;
+  display:grid;place-items:center;
+  background:var(--accent);color:#0a0a0a;
+  box-shadow:0 10px 30px -6px var(--accent-glow),0 6px 14px rgba(0,0,0,.3);
+  border:0;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1);
+  position:relative;
+  cursor:pointer;
+}
+.direct__toggle:hover{transform:scale(1.06)}
+.direct__toggle svg{width:26px;height:26px;transition:transform .3s ease,opacity .2s ease;position:absolute}
+.direct__toggle .ico-close{opacity:0;transform:rotate(-90deg)}
+.direct.is-open .direct__toggle .ico-open{opacity:0;transform:rotate(90deg)}
+.direct.is-open .direct__toggle .ico-close{opacity:1;transform:rotate(0)}
+.direct__pulse{
+  position:absolute;inset:0;border-radius:999px;
+  background:var(--accent);opacity:.5;z-index:-1;
+  animation:pulse 2.4s ease-out infinite;
+  pointer-events:none;
+}
+.direct.is-open .direct__pulse{display:none}
+@keyframes pulse{
+  0%{transform:scale(1);opacity:.5}
+  100%{transform:scale(1.7);opacity:0}
+}
+@media (prefers-reduced-motion:reduce){.direct__pulse{animation:none;display:none}}
+
+/* =========================================================
+   BACK TO TOP
+   ========================================================= */
+.to-top{
+  position:fixed;left:clamp(1rem,3vw,1.6rem);bottom:clamp(1rem,3vw,1.6rem);
+  z-index:90;
+  width:44px;height:44px;border-radius:999px;
+  display:grid;place-items:center;
+  background:var(--bg-elev);color:var(--text);
+  border:1px solid var(--line-strong);
+  opacity:0;transform:translateY(12px);pointer-events:none;
+  transition:opacity .3s ease,transform .3s ease,border-color .2s ease,color .2s ease,background .2s ease;
+  box-shadow:0 6px 18px rgba(0,0,0,.35);
+}
+.to-top.is-visible{opacity:1;transform:none;pointer-events:auto}
+.to-top:hover{border-color:var(--accent);color:var(--accent);background:var(--surface)}
+.to-top svg{width:18px;height:18px}
+@media (max-width:480px){
+  .to-top{width:40px;height:40px}
+}
+
+/* =========================================================
+   FORM (opzionale, embeddato nella sezione CTA-final)
+   ========================================================= */
+.quick-form{display:grid;gap:.8rem;margin-top:1.5rem;max-width:460px}
+.quick-form label{display:block}
+.quick-form .sr{position:absolute;left:-9999px}
+.quick-form input,.quick-form textarea{
+  width:100%;padding:.95rem 1.1rem;
+  border:1px solid rgba(245,245,245,.2);
+  border-radius:var(--r-sm);
+  background:rgba(245,245,245,.06);color:#f5f5f5;
+  font-size:.95rem;
+  transition:border-color .2s ease,background .2s ease;
+}
+.quick-form input::placeholder,.quick-form textarea::placeholder{color:rgba(245,245,245,.45)}
+.quick-form input:focus,.quick-form textarea:focus{outline:0;border-color:var(--accent);background:rgba(245,245,245,.1)}
+.quick-form .error-msg{color:var(--danger);font-size:.82rem;min-height:1.2em}
+.quick-form .field.has-error input,.quick-form .field.has-error textarea{border-color:var(--danger)}
+.quick-form .ok-msg{
+  display:none;
+  padding:1rem;border-radius:var(--r-sm);
+  background:rgba(61,220,132,.12);color:var(--ok);
+  border:1px solid rgba(61,220,132,.3);
+  font-size:.92rem;
+}
+.quick-form.is-sent .ok-msg{display:block}
+.quick-form.is-sent .field,.quick-form.is-sent button{display:none}
 </style>
+
 </head>
+
 <body>
 
-<!-- NAV -->
+<!-- ========================================================
+     NAV
+     ======================================================== -->
+
 <header class="nav" id="nav">
-  <div class="container nav__inner">
+  <div class="nav__inner">
     <a href="#" class="brand" aria-label="Turco Personal Trainer, home">
-      <span class="brand__name">TURCO<span class="dot">.</span></span>
+      <span class="brand__name">TURCO<span class="brand__dot">.</span></span>
       <span class="brand__tag">Personal Trainer</span>
     </a>
-    <nav class="nav__menu" id="navMenu" aria-label="Menu principale">
-      <a href="#metodo">Metodo</a>
-      <a href="#chi-sono">Chi sono</a>
-      <a href="#pacchetti">Pacchetti</a>
-      <a href="#faq">FAQ</a>
-      <a href="#contatti">Contatti</a>
-    </nav>
-    <div style="display:flex;align-items:center;gap:.6rem">
-      <a href="#pacchetti" class="btn btn--sm nav__cta-desktop">Scegli il piano
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <button class="nav__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false">☰</button>
-    </div>
+
+```
+<nav class="nav__menu" id="navMenu" aria-label="Menu principale">
+  <a href="#metodo">Metodo</a>
+  <a href="#chi-sono">Chi sono</a>
+  <a href="#pacchetti">Pacchetti</a>
+  <a href="#faq">FAQ</a>
+  <a href="#contatti">Contatti</a>
+</nav>
+
+<div class="nav__actions">
+  <button class="icon-btn" id="themeToggle" aria-label="Cambia tema chiaro/scuro" title="Tema">
+    <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+  </button>
+  <a href="#pacchetti" class="btn btn--sm nav__cta-desktop">Scegli il piano
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+  <button class="icon-btn nav__toggle" id="navToggle" aria-label="Apri menu" aria-expanded="false" aria-controls="navMenu">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+  </button>
+</div>
+```
+
   </div>
 </header>
 
 <main id="top">
 
-<!-- HERO -->
+<!-- ========================================================
+     HERO
+     ======================================================== -->
+
 <section class="hero section">
+  <!-- sfondo attrezzi: pattern SVG bilancieri/piastre -->
+  <div class="hero__bg" aria-hidden="true">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+          <path d="M60 0H0V60" fill="none" stroke="currentColor" stroke-width=".5" opacity=".35"/>
+        </pattern>
+        <symbol id="barbell" viewBox="0 0 200 40">
+          <rect x="0" y="17" width="200" height="6" fill="currentColor" opacity=".5"/>
+          <rect x="10" y="8" width="10" height="24" fill="currentColor" opacity=".8"/>
+          <rect x="22" y="4" width="14" height="32" fill="currentColor"/>
+          <rect x="164" y="4" width="14" height="32" fill="currentColor"/>
+          <rect x="180" y="8" width="10" height="24" fill="currentColor" opacity=".8"/>
+        </symbol>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" color="currentColor"/>
+      <use href="#barbell" x="-40" y="120" width="260" height="52" color="var(--text)" opacity=".05"/>
+      <use href="#barbell" x="1100" y="260" width="340" height="68" color="var(--text)" opacity=".04"/>
+      <use href="#barbell" x="-80" y="700" width="300" height="60" color="var(--text)" opacity=".05"/>
+      <use href="#barbell" x="900" y="780" width="380" height="76" color="var(--text)" opacity=".03"/>
+      <circle cx="1280" cy="150" r="90" fill="none" stroke="var(--accent)" stroke-width="2" opacity=".15"/>
+      <circle cx="120" cy="480" r="140" fill="none" stroke="var(--accent)" stroke-width="2" opacity=".1"/>
+    </svg>
+  </div>
+
   <div class="container">
     <div class="hero__grid">
       <div>
@@ -302,52 +948,59 @@ footer{padding:3rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem}
           <span class="outline">Metodo.</span><br>
           Risultati.
         </h1>
-        <dl class="hero__meta reveal" data-delay="2">
-          <span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--accent)"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Casal Velino, Salerno
-          </span>
-          <span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--accent)"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-            Coaching online ovunque
-          </span>
-          <span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" style="color:var(--accent)"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-            Laurea in Scienze Motorie
-          </span>
-        </dl>
-        <p class="hero__lead lead reveal" data-delay="3">
-          Basta allenamenti a caso, schede copia-incolla e promesse vuote. Costruisco con te un percorso <strong>su misura</strong>, basato su <strong>scienza dell'esercizio</strong> e progressione reale — che tu voglia allenarti in presenza, a distanza, o entrambe le cose.
-        </p>
-        <div class="hero__ctas reveal" data-delay="4">
-          <a href="#pacchetti" class="btn">Scegli il tuo pacchetto
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-          <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20vorrei%20informazioni%20sui%20pacchetti" class="btn btn--ghost" target="_blank" rel="noopener">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="color:inherit"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-            Scrivimi su WhatsApp
-          </a>
-        </div>
-        <dl class="hero__stats reveal" data-delay="4">
-          <div><dt>100%</dt><dd>programmi personalizzati</dd></div>
-          <div><dt>24/7</dt><dd>supporto coaching online</dd></div>
-          <div><dt>0</dt><dd>schede copia-incolla</dd></div>
-        </dl>
-      </div>
 
-      <!-- IMMAGINE 1: Fisico / Mirror selfie -->
-      <div class="hero__media reveal" data-delay="2">
-        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&q=80" alt="Andrea Turco, personal trainer - risultato fisico" loading="eager" width="480" height="600" />
-        <div class="hero__badge" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-          <div><strong>FIT</strong><span>CERTIFIED</span></div>
-        </div>
-      </div>
+```
+    <dl class="hero__meta reveal" data-delay="2">
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Casal Velino, Salerno
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        Coaching online ovunque
+      </span>
+      <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        Laurea in Scienze Motorie
+      </span>
+    </dl>
+
+    <p class="hero__lead lead reveal" data-delay="3">
+      Basta allenamenti a caso, schede copia-incolla e promesse vuote. Costruisco con te un percorso <strong>su misura</strong>, basato su <strong>scienza dell'esercizio</strong> e progressione reale — che tu voglia allenarti in presenza, a distanza, o entrambe le cose.
+    </p>
+
+    <div class="hero__ctas reveal" data-delay="4">
+      <a href="#pacchetti" class="btn">Scegli il tuo pacchetto
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20vorrei%20informazioni%20sui%20pacchetti" class="btn btn--ghost" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+        Scrivimi su WhatsApp
+      </a>
     </div>
+
+    <dl class="hero__stats reveal" data-delay="4">
+      <div><dt>100%</dt><dd>programmi personalizzati</dd></div>
+      <div><dt>24/7</dt><dd>supporto coaching online</dd></div>
+      <div><dt>0</dt><dd>schede copia-incolla</dd></div>
+    </dl>
+  </div>
+
+  <div class="hero__media reveal" data-delay="2">
+    <img src="images/hero.jpg" alt="Andrea Turco, personal trainer" loading="eager" decoding="async" width="520" height="650" onerror="this.style.opacity=.7;this.alt='Carica images/hero.jpg'" class="hero__media__img" />
+    <div class="hero__media__badge" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <div><strong>FIT</strong><span>Certified</span></div>
+    </div>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
-<!-- TAPE -->
+<!-- Tape marquee -->
+
 <div class="tape" aria-hidden="true">
   <div class="tape__track">
     <span>Ipertrofia</span><span>Dimagrimento</span><span>Forza</span><span>Principianti</span><span>Postura</span><span>Online coaching</span>
@@ -355,271 +1008,341 @@ footer{padding:3rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem}
   </div>
 </div>
 
-<!-- METODO -->
+<!-- ========================================================
+     METODO
+     ======================================================== -->
+
 <section class="section" id="metodo">
   <div class="container">
-    <span class="eyebrow reveal">Il metodo</span>
-    <h2 class="h-section reveal" data-delay="1">Un sistema,<br>non un'<span class="highlight">improvvisazione</span>.</h2>
-    <p class="lead reveal" data-delay="2">Ogni percorso segue quattro fasi studiate per farti progredire senza infortuni, senza plateau e senza perdere tempo.</p>
-    <div class="method__grid">
-      <article class="method__card reveal">
-        <span class="method__num">01</span>
-        <h3>Analisi</h3>
-        <p>Valutiamo obiettivi, stato di forma, mobilità, abitudini e disponibilità settimanale. Nessuna scheda nasce senza conoscerti.</p>
-      </article>
-      <article class="method__card reveal" data-delay="1">
-        <span class="method__num">02</span>
-        <h3>Programma</h3>
-        <p>Costruisco un piano con esercizi, carichi, recuperi e progressioni pensati <em>per te</em>. Niente template.</p>
-      </article>
-      <article class="method__card reveal" data-delay="2">
-        <span class="method__num">03</span>
-        <h3>Coaching</h3>
-        <p>Ti seguo durante il percorso con correzioni tecniche, adattamenti e supporto continuo via messaggio o in palestra.</p>
-      </article>
-      <article class="method__card reveal" data-delay="3">
-        <span class="method__num">04</span>
-        <h3>Risultati</h3>
-        <p>Check-in periodici, dati alla mano. Se qualcosa non funziona, si cambia. L'unico KPI che conta sono i tuoi progressi.</p>
-      </article>
+    <div class="method__head">
+      <div>
+        <span class="eyebrow reveal">Il metodo</span>
+        <h2 class="h-section reveal" data-delay="1">Un sistema,<br>non un <span class="highlight-mark">improvvisazione</span>.</h2>
+      </div>
+      <p class="lead reveal" data-delay="2">
+        Ogni percorso segue quattro fasi studiate per farti progredire senza infortuni, senza plateau e senza perdere tempo.
+      </p>
     </div>
-    <div class="unisa-badge reveal">DR. SCIENZE MOTORIE · UNISA</div>
+
+```
+<div class="method__grid">
+  <article class="method__card reveal">
+    <span class="method__num">01</span>
+    <h3>Analisi</h3>
+    <p>Valutiamo obiettivi, stato di forma, mobilità, abitudini e disponibilità settimanale. Nessuna scheda nasce senza conoscerti.</p>
+  </article>
+  <article class="method__card reveal" data-delay="1">
+    <span class="method__num">02</span>
+    <h3>Programma</h3>
+    <p>Costruisco un piano con esercizi, carichi, recuperi e progressioni pensati <em>per te</em>. Niente template.</p>
+  </article>
+  <article class="method__card reveal" data-delay="2">
+    <span class="method__num">03</span>
+    <h3>Coaching</h3>
+    <p>Ti seguo durante il percorso con correzioni tecniche, adattamenti e supporto continuo via messaggio o in palestra.</p>
+  </article>
+  <article class="method__card reveal" data-delay="3">
+    <span class="method__num">04</span>
+    <h3>Risultati</h3>
+    <p>Check-in periodici, dati alla mano. Se qualcosa non funziona, si cambia. L'unico KPI che conta sono i tuoi progressi.</p>
+  </article>
+</div>
+```
+
   </div>
 </section>
 
-<!-- CHI SONO -->
+<!-- ========================================================
+     CHI SONO
+     ======================================================== -->
+
 <section class="section about" id="chi-sono">
   <div class="container">
     <div class="about__grid">
       <div class="about__media reveal">
-        <div class="about__stamp" aria-hidden="true">DR. <span>SCIENZE</span> MOTORIE · UNISA</div>
-        <img src="https://images.unsplash.com/photo-1627574887172-5f4f4f3f6e1e?w=500&q=80" alt="Andrea Turco, laurea in Scienze Motorie" loading="lazy" width="440" height="586" />
-      </div>
-      <div>
-        <span class="eyebrow reveal">Chi sono</span>
-        <h2 class="h-display reveal" data-delay="1" style="font-family:var(--fd);font-size:clamp(1.8rem,5vw,3rem);line-height:.95;text-transform:uppercase;margin-bottom:1rem">
-          Andrea Turco.<br><span class="outline" style="-webkit-text-stroke:2px var(--text);color:transparent">Coach.</span> <span style="color:var(--accent)">Atleta.</span>
-        </h2>
-        <p class="lead reveal" data-delay="2" style="margin-top:1rem">
-          Laureato in Scienze Motorie all'Università degli Studi di Salerno. Allenarsi è il mio mestiere, ma prima di tutto è la mia passione. Ho studiato il movimento umano per anni — adesso quel sapere lo metto al servizio di chi vuole risultati concreti.
-        </p>
-        <p class="reveal" data-delay="3" style="margin-top:1rem;color:var(--text-dim)">
-          Lavoro sia in presenza a Casal Velino sia online con clienti in tutta Italia. La mia filosofia è semplice: programmi chiari, comunicazione diretta, zero scorciatoie.
-        </p>
-        <div class="about__creds reveal" data-delay="4">
-          <div class="about__cred">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
-            <div><strong>Laurea Triennale in Scienze Motorie</strong><span>Università degli Studi di Salerno</span></div>
-          </div>
-          <div class="about__cred">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M6.5 6.5h11v11h-11z"/></svg>
-            <div><strong>Programmazione basata sull'evidenza</strong><span>Biomeccanica, fisiologia dell'esercizio, periodizzazione</span></div>
-          </div>
-          <div class="about__cred">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
-            <div><strong>Percorsi per tutti i livelli</strong><span>Da chi parte da zero all'atleta evoluto</span></div>
-          </div>
+        <div class="about__stamp" aria-hidden="true">
+          DR. <span>SCIENZE</span> MOTORIE · UNISA ·
         </div>
+        <img src="images/about.jpg" alt="Andrea Turco, laureato in Scienze Motorie presso l'Università di Salerno" loading="lazy" decoding="async" width="440" height="586" onerror="this.alt='Carica images/about.jpg'" />
+      </div>
+
+```
+  <div>
+    <span class="eyebrow reveal">Chi sono</span>
+    <h2 class="h-display about__title reveal" data-delay="1">Andrea Turco.<br><span class="outline">Coach.</span> <span style="color:var(--accent)">Atleta.</span></h2>
+    <p class="lead reveal" data-delay="2" style="margin-top:1.5rem">
+      Laureato in Scienze Motorie all'Università degli Studi di Salerno. Allenarsi è il mio mestiere, ma prima di tutto è la mia passione. Ho studiato il movimento umano per anni — adesso quel sapere lo metto al servizio di chi vuole risultati concreti.
+    </p>
+    <p class="reveal" data-delay="3" style="margin-top:1rem;color:var(--text-dim)">
+      Lavoro sia in presenza a Casal Velino sia online con clienti in tutta Italia. La mia filosofia è semplice: programmi chiari, comunicazione diretta, zero scorciatoie.
+    </p>
+
+    <div class="about__creds reveal" data-delay="4">
+      <div class="about__cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        <div><strong>Laurea Triennale in Scienze Motorie</strong><span>Università degli Studi di Salerno</span></div>
+      </div>
+      <div class="about__cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5h11v11h-11zM2 12h4.5M17.5 12H22M12 2v4.5M12 17.5V22"/></svg>
+        <div><strong>Programmazione basata sull'evidenza</strong><span>Biomeccanica, fisiologia dell'esercizio, periodizzazione</span></div>
+      </div>
+      <div class="about__cred">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        <div><strong>Percorsi per tutti i livelli</strong><span>Da chi parte da zero all'atleta evoluto</span></div>
       </div>
     </div>
   </div>
+</div>
+```
+
+  </div>
 </section>
 
-<!-- PACCHETTI -->
+<!-- ========================================================
+     PACCHETTI
+     ======================================================== -->
+
 <section class="section pricing" id="pacchetti">
   <div class="container">
     <div class="pricing__head reveal">
       <span class="eyebrow" style="justify-content:center">Pacchetti</span>
-      <h2 class="h-section" style="margin-top:.8rem">Scegli come<br>vuoi <span class="highlight">allenarti</span>.</h2>
-      <p class="lead" style="margin-inline:auto;margin-top:.8rem">Tre modi per partire. Uno solo obiettivo: portarti dove vuoi arrivare, con il metodo più adatto a te.</p>
+      <h2 class="h-section" style="margin-top:1rem">Scegli come<br>vuoi <span class="highlight-mark">allenarti</span>.</h2>
+      <p class="lead">Tre modi per partire. Uno solo obiettivo: portarti dove vuoi arrivare, con il metodo più adatto a te.</p>
     </div>
-    <div class="pricing__grid">
-      <article class="plan reveal">
-        <h3 class="plan__name">Online</h3>
-        <p class="plan__desc">Scheda personalizzata e coaching a distanza. Perfetto se hai la tua palestra e vuoi un programma vero.</p>
-        <div class="plan__price">
-          <span class="currency">€</span>
-          <span class="amount">50</span>
-          <span class="plan__unit">/ 30 giorni</span>
-        </div>
-        <ul class="plan__list">
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Coaching online per 30 giorni</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Correzione esecuzioni via video</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Supporto in chat 7/7</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Scheda personalizzata</li>
-        </ul>
-        <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20sono%20interessato%20al%20pacchetto%20ONLINE%20(50%E2%82%AC%2F30gg)" class="btn btn--ghost" target="_blank" rel="noopener">Attiva Online</a>
-      </article>
-      <article class="plan plan--featured reveal" data-delay="1">
-        <span class="plan__badge">Più Scelto</span>
-        <h3 class="plan__name">Hybrid · Primo Mese</h3>
-        <p class="plan__desc">La scheda personalizzata <em>e</em> il coaching online insieme. Il pacchetto completo per iniziare sul serio.</p>
-        <div class="plan__price">
-          <span class="currency">€</span>
-          <span class="amount">80</span>
-          <span class="plan__unit">/ primo mese</span>
-        </div>
-        <ul class="plan__list">
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg><strong>Scheda personalizzata</strong> (una tantum inclusa)</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Coaching online 30 giorni incluso</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Check-in settimanali con feedback</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Rinnovo agevolato dal 2° mese</li>
-        </ul>
-        <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20voglio%20iniziare%20con%20il%20pacchetto%20HYBRID%20(80%E2%82%AC%20primo%20mese)" class="btn" target="_blank" rel="noopener">Inizia Oggi
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </article>
-      <article class="plan reveal" data-delay="2">
-        <h3 class="plan__name">In Presenza</h3>
-        <p class="plan__desc">Lezioni uno-a-uno a Casal Velino (SA). La qualità più alta possibile: ti guido esercizio per esercizio.</p>
-        <div class="plan__price">
-          <span class="currency" style="font-size:.85rem">da €</span>
-          <span class="amount">20</span>
-          <span class="plan__unit">/ lezione</span>
-        </div>
-        <ul class="plan__list">
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Allenamento 1-to-1 in palestra</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Correzione tecnica in tempo reale</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Pacchetti personalizzabili</li>
-          <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg>Scheda opzionale (+50€ una tantum)</li>
-        </ul>
-        <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20vorrei%20allenarmi%20in%20PRESENZA%20a%20Casal%20Velino" class="btn btn--ghost" target="_blank" rel="noopener">Prenota Lezione</a>
-      </article>
+
+```
+<div class="pricing__grid">
+
+  <!-- Piano 1: ONLINE -->
+  <article class="plan reveal">
+    <h3 class="plan__name">Online</h3>
+    <p class="plan__desc">Scheda personalizzata e coaching a distanza. Perfetto se hai la tua palestra e vuoi un programma vero.</p>
+    <div class="plan__price">
+      <span class="currency">€</span>
+      <span class="amount">50</span>
+      <span class="plan__unit">/ 30 giorni</span>
     </div>
-    <p class="reveal" style="text-align:center;margin-top:2rem;color:var(--text-dim);font-size:.88rem">
-      <strong style="color:var(--text)">Scheda personalizzata una tantum</strong> disponibile anche da sola a <strong style="color:var(--text)">50€</strong> · Pagamenti sicuri · Garanzia soddisfatti o rimborsati entro 7 giorni
-    </p>
+    <ul class="plan__list">
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Coaching online per 30 giorni</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Correzione esecuzioni via video</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Supporto in chat 7/7</li>
+      <li class="plan__li is-muted"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Scheda personalizzata</li>
+    </ul>
+    <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20sono%20interessato%20al%20pacchetto%20ONLINE%20(50%E2%82%AC%2F30gg)" class="btn btn--ghost" target="_blank" rel="noopener">Attiva Online</a>
+  </article>
+
+  <!-- Piano 2: HYBRID (consigliato) -->
+  <article class="plan plan--featured reveal" data-delay="1">
+    <span class="plan__badge">Più Scelto</span>
+    <h3 class="plan__name">Hybrid · Primo Mese</h3>
+    <p class="plan__desc">La scheda personalizzata <em>e</em> il coaching online insieme. Il pacchetto completo per iniziare sul serio.</p>
+    <div class="plan__price">
+      <span class="currency">€</span>
+      <span class="amount">80</span>
+      <span class="plan__unit">/ primo mese</span>
+    </div>
+    <ul class="plan__list">
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg><strong>Scheda personalizzata</strong> (una tantum inclusa)</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Coaching online 30 giorni incluso</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Check-in settimanali con feedback</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Rinnovo agevolato dal 2° mese</li>
+    </ul>
+    <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20voglio%20iniziare%20con%20il%20pacchetto%20HYBRID%20(80%E2%82%AC%20primo%20mese)" class="btn" target="_blank" rel="noopener">Inizia Oggi
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </a>
+  </article>
+
+  <!-- Piano 3: IN PRESENZA -->
+  <article class="plan reveal" data-delay="2">
+    <h3 class="plan__name">In Presenza</h3>
+    <p class="plan__desc">Lezioni uno-a-uno a Casal Velino (SA). La qualità più alta possibile: ti guido esercizio per esercizio.</p>
+    <div class="plan__price">
+      <span class="currency" style="font-size:.9rem">da €</span>
+      <span class="amount">20</span>
+      <span class="plan__unit">/ lezione</span>
+    </div>
+    <ul class="plan__list">
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Allenamento 1-to-1 in palestra</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Correzione tecnica in tempo reale</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Pacchetti personalizzabili</li>
+      <li class="plan__li"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Scheda opzionale (+50€ una tantum)</li>
+    </ul>
+    <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20vorrei%20allenarmi%20in%20PRESENZA%20a%20Casal%20Velino" class="btn btn--ghost" target="_blank" rel="noopener">Prenota Lezione</a>
+  </article>
+
+</div>
+
+<p class="pricing__foot reveal">
+  <strong>Scheda personalizzata una tantum</strong> disponibile anche da sola a <strong>50€</strong> · Pagamenti sicuri · Garanzia soddisfatti o rimborsati entro 7 giorni
+</p>
+```
+
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
+<!-- ========================================================
+     TESTIMONIAL (placeholder: Andrea li sostituirà con storie reali)
+     ======================================================== -->
+
 <section class="section" id="storie">
   <div class="container">
-    <span class="eyebrow reveal">Storie</span>
-    <h2 class="h-section reveal" data-delay="1">Chi si è fidato<br><span class="highlight">ha vinto</span>.</h2>
-    <p class="lead reveal" data-delay="2">Piccola selezione di risultati. Più di ogni sessione: un cambio di abitudini.</p>
-    <div class="testi__grid">
-      <article class="testi__card reveal">
-        <p class="testi__text">"Con Andrea ho ricominciato ad allenarmi dopo anni. In tre mesi ho perso 6 kg e preso fiducia in me — senza mai sentirmi fuori posto in palestra."</p>
-        <div class="testi__person">
-          <div class="testi__avatar" aria-hidden="true">M</div>
-          <div><strong>Marco R.</strong><span>Cliente online · 3 mesi di percorso</span></div>
-        </div>
-      </article>
-      <article class="testi__card reveal" data-delay="1">
-        <p class="testi__text">"Programma serio, niente scorciatoie. Finalmente so <em>perché</em> faccio ogni esercizio. Il coaching online vale ogni centesimo."</p>
-        <div class="testi__person">
-          <div class="testi__avatar" aria-hidden="true">G</div>
-          <div><strong>Giulia C.</strong><span>Cliente online · Ipertrofia</span></div>
-        </div>
-      </article>
-      <article class="testi__card reveal" data-delay="2">
-        <p class="testi__text">"In presenza fa la differenza. Corregge, spinge al punto giusto, e ti fa sentire seguito. Il mio squat è cambiato in 4 settimane."</p>
-        <div class="testi__person">
-          <div class="testi__avatar" aria-hidden="true">L</div>
-          <div><strong>Luca D.</strong><span>In presenza · Casal Velino</span></div>
-        </div>
-      </article>
+    <div class="method__head">
+      <div>
+        <span class="eyebrow reveal">Storie</span>
+        <h2 class="h-section reveal" data-delay="1">Chi si è<br>fidato <span class="highlight-mark">ha vinto</span>.</h2>
+      </div>
+      <p class="lead reveal" data-delay="2">Piccola selezione di risultati. Più di ogni sessione: un cambio di abitudini.</p>
     </div>
+
+```
+<div class="testi__grid">
+  <!--
+    ⚠️ JACOPO: inserisci qui i testimonial reali di Andrea.
+    Mantieni la struttura. Se vuoi foto vere, sostituisci il div .testi__avatar
+    con <img src="images/testi-1.jpg" class="testi__avatar" alt="...">
+  -->
+  <article class="testi__card reveal">
+    <p class="testi__text">"Con Andrea ho ricominciato ad allenarmi dopo anni. In tre mesi ho perso 6 kg e preso fiducia in me — senza mai sentirmi fuori posto in palestra."</p>
+    <div class="testi__person">
+      <div class="testi__avatar" aria-hidden="true">M</div>
+      <div><strong>Marco R.</strong><span>Cliente online · 3 mesi di percorso</span></div>
+    </div>
+  </article>
+  <article class="testi__card reveal" data-delay="1">
+    <p class="testi__text">"Programma serio, niente scorciatoie. Finalmente so <em>perché</em> faccio ogni esercizio. Il coaching online vale ogni centesimo."</p>
+    <div class="testi__person">
+      <div class="testi__avatar" aria-hidden="true">G</div>
+      <div><strong>Giulia C.</strong><span>Cliente online · Ipertrofia</span></div>
+    </div>
+  </article>
+  <article class="testi__card reveal" data-delay="2">
+    <p class="testi__text">"In presenza fa la differenza. Corregge, spinge al punto giusto, e ti fa sentire seguito. Il mio squat è cambiato in 4 settimane."</p>
+    <div class="testi__person">
+      <div class="testi__avatar" aria-hidden="true">L</div>
+      <div><strong>Luca D.</strong><span>In presenza · Casal Velino</span></div>
+    </div>
+  </article>
+</div>
+```
+
   </div>
 </section>
 
-<!-- FAQ -->
+<!-- ========================================================
+     FAQ
+     ======================================================== -->
+
 <section class="section" id="faq">
   <div class="container">
     <div class="faq__grid">
       <div>
         <span class="eyebrow reveal">FAQ</span>
-        <h2 class="h-section reveal" data-delay="1" style="margin-top:.5rem">Domande<br>frequenti.</h2>
-        <p class="lead reveal" data-delay="2" style="margin-top:1rem">
+        <h2 class="h-section reveal" data-delay="1" style="margin-top:1rem">Domande<br>frequenti.</h2>
+        <p class="lead reveal" data-delay="2" style="margin-top:1.2rem">
           Non trovi la tua risposta? <a href="https://wa.me/393287625772" target="_blank" rel="noopener" style="color:var(--accent);text-decoration:underline;text-underline-offset:3px">Scrivimi su WhatsApp</a>, ti rispondo di persona.
         </p>
       </div>
-      <div class="faq__list">
-        <details class="faq reveal">
-          <summary>Non mi sono mai allenato. Posso iniziare lo stesso?</summary>
-          <div>Assolutamente sì. Anzi, è il momento migliore per partire col piede giusto. Costruisco il programma partendo dal tuo livello reale, con progressioni graduali. Nessun giudizio, solo metodo.</div>
-        </details>
-        <details class="faq reveal" data-delay="1">
-          <summary>Come funziona il coaching online?</summary>
-          <div>Ricevi la tua scheda personalizzata, accesso a un canale di comunicazione diretto con me (WhatsApp) per dubbi, correzioni video e check-in settimanali. Ti seguo come se fossi in palestra con te.</div>
-        </details>
-        <details class="faq reveal" data-delay="2">
-          <summary>Devo avere un abbonamento in palestra?</summary>
-          <div>Per il pacchetto <strong>Online</strong> e <strong>Hybrid</strong> sì, o in alternativa un home gym attrezzato — ci adattiamo a ciò che hai. Per il pacchetto <strong>In Presenza</strong> ci vediamo direttamente a Casal Velino.</div>
-        </details>
-        <details class="faq reveal" data-delay="3">
-          <summary>In quanto tempo vedrò risultati?</summary>
-          <div>Dipende da obiettivo, punto di partenza e costanza. Cambiamenti nella percezione del corpo e nella forza si vedono spesso già nelle prime 4–6 settimane. Per trasformazioni estetiche importanti si ragiona a 3–6 mesi, con metodo.</div>
-        </details>
-        <details class="faq reveal" data-delay="3">
-          <summary>Posso cambiare pacchetto in corso?</summary>
-          <div>Certo. Se parti Online e vuoi aggiungere sedute in presenza, o viceversa, si ricalibra il percorso. La priorità è che il programma resti adatto a <em>te</em>.</div>
-        </details>
-        <details class="faq reveal" data-delay="4">
-          <summary>E se non sono soddisfatto?</summary>
-          <div>Hai <strong>7 giorni</strong> dal primo pagamento per chiedere il rimborso integrale, senza domande. Il rapporto si basa sulla fiducia, non sulla pressione commerciale.</div>
-        </details>
-      </div>
-    </div>
+
+```
+  <div class="faq__list">
+    <details class="faq reveal">
+      <summary>Non mi sono mai allenato. Posso iniziare lo stesso?</summary>
+      <div>Assolutamente sì. Anzi, è il momento migliore per partire col piede giusto. Costruisco il programma partendo dal tuo livello reale, con progressioni graduali. Nessun giudizio, solo metodo.</div>
+    </details>
+    <details class="faq reveal" data-delay="1">
+      <summary>Come funziona il coaching online?</summary>
+      <div>Ricevi la tua scheda personalizzata, accesso a un canale di comunicazione diretto con me (WhatsApp) per dubbi, correzioni video e check-in settimanali. Ti seguo come se fossi in palestra con te.</div>
+    </details>
+    <details class="faq reveal" data-delay="2">
+      <summary>Devo avere un abbonamento in palestra?</summary>
+      <div>Per il pacchetto <strong>Online</strong> e <strong>Hybrid</strong> sì, o in alternativa un home gym attrezzato — ci adattiamo a ciò che hai. Per il pacchetto <strong>In Presenza</strong> ci vediamo direttamente a Casal Velino.</div>
+    </details>
+    <details class="faq reveal" data-delay="3">
+      <summary>In quanto tempo vedrò risultati?</summary>
+      <div>Dipende da obiettivo, punto di partenza e costanza. Cambiamenti nella percezione del corpo e nella forza si vedono spesso già nelle prime 4–6 settimane. Per trasformazioni estetiche importanti si ragiona a 3–6 mesi, con metodo.</div>
+    </details>
+    <details class="faq reveal" data-delay="4">
+      <summary>Posso cambiare pacchetto in corso?</summary>
+      <div>Certo. Se parti Online e vuoi aggiungere sedute in presenza, o viceversa, si ricalibra il percorso. La priorità è che il programma resti adatto a <em>te</em>.</div>
+    </details>
+    <details class="faq reveal" data-delay="4">
+      <summary>E se non sono soddisfatto?</summary>
+      <div>Hai <strong>7 giorni</strong> dal primo pagamento per chiedere il rimborso integrale, senza domande. Il rapporto si basa sulla fiducia, non sulla pressione commerciale.</div>
+    </details>
+  </div>
+</div>
+```
+
   </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ========================================================
+     CTA FINALE + FORM
+     ======================================================== -->
+
 <section class="section" id="contatti">
   <div class="container">
     <div class="cta-final reveal">
-      <span class="eyebrow" style="color:rgba(10,10,10,.65);justify-content:center">Prossimo passo</span>
-      <h2 class="cta-final__title" style="margin-top:.8rem">Smetti di<br>rimandare. <em>Inizia.</em></h2>
+      <span class="eyebrow" style="color:rgba(245,245,245,.7)">Prossimo passo</span>
+      <h2 class="cta-final__title" style="margin-top:1rem">Smetti di<br>rimandare. <em>Inizia.</em></h2>
       <p>Un messaggio di 30 secondi è tutto quello che serve. Ti rispondo io, non una segreteria automatica.</p>
-      
-      <!-- PULSANTI CONTATTO VISIBILI -->
-      <div class="cta-final__ctas">
-        <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20voglio%20iniziare" class="btn" target="_blank" rel="noopener" style="background:#25D366;color:#fff">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
-          WhatsApp diretto
-        </a>
-        <a href="mailto:andrea.turco1234@gmail.com?subject=Richiesta%20informazioni%20pacchetti" class="btn" target="_blank" rel="noopener" style="background:#EA4335;color:#fff">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Email
-        </a>
-        <a href="https://www.instagram.com/andrea_xtr" class="btn" target="_blank" rel="noopener" style="background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);color:#fff">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
-          Instagram
-        </a>
-      </div>
 
-      <!-- FORM -->
-      <form class="quick-form" id="quickForm" novalidate>
-        <div class="field">
-          <input type="text" name="name" placeholder="Il tuo nome" required minlength="2" autocomplete="name" />
-          <div class="error-msg" aria-live="polite"></div>
-        </div>
-        <div class="field">
-          <input type="text" name="contact" placeholder="Email o WhatsApp" required autocomplete="email" />
-          <div class="error-msg" aria-live="polite"></div>
-        </div>
-        <div class="field">
-          <textarea name="goal" placeholder="Il tuo obiettivo (es. perdere 5kg, aumentare massa…)" rows="3" required minlength="10"></textarea>
-          <div class="error-msg" aria-live="polite"></div>
-        </div>
-        <button type="submit" class="btn" style="background:var(--accent);color:var(--accent-ink)">Invia richiesta
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </button>
-        <div class="ok-msg" role="status">✓ Perfetto! Ti apro WhatsApp con il messaggio già compilato. Se non si apre, scrivimi a <strong>+39 328 762 5772</strong>.</div>
-      </form>
+```
+  <div class="cta-final__ctas">
+    <a href="https://wa.me/393287625772?text=Ciao%20Andrea%2C%20voglio%20iniziare" class="btn" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg>
+      WhatsApp diretto
+    </a>
+    <a href="mailto:andrea.turco1234@gmail.com?subject=Richiesta%20informazioni%20pacchetti&body=Ciao%20Andrea%2C%0A%0Asono%20interessato%20a..." class="btn btn--ghost">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+      Email
+    </a>
+    <a href="https://www.instagram.com/andrea_xtr" class="btn btn--ghost" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </a>
+  </div>
+
+  <form class="quick-form" id="quickForm" novalidate aria-label="Modulo di contatto rapido">
+    <div class="field">
+      <label class="sr" for="qf-name">Nome</label>
+      <input type="text" id="qf-name" name="name" placeholder="Il tuo nome" required minlength="2" autocomplete="name" />
+      <div class="error-msg" aria-live="polite"></div>
     </div>
+    <div class="field">
+      <label class="sr" for="qf-email">Email o telefono</label>
+      <input type="text" id="qf-email" name="contact" placeholder="Email o WhatsApp" required autocomplete="email" />
+      <div class="error-msg" aria-live="polite"></div>
+    </div>
+    <div class="field">
+      <label class="sr" for="qf-msg">Obiettivo</label>
+      <textarea id="qf-msg" name="goal" placeholder="Il tuo obiettivo (es. perdere 5kg, aumentare massa…)" rows="3" required minlength="10"></textarea>
+      <div class="error-msg" aria-live="polite"></div>
+    </div>
+    <button type="submit" class="btn">Invia richiesta
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+    <div class="ok-msg" role="status">
+      ✓ Perfetto! Ti apro WhatsApp con il messaggio già compilato. Se non si apre, scrivimi a <strong>+39 328 762 5772</strong>.
+    </div>
+  </form>
+</div>
+```
+
   </div>
 </section>
 
 </main>
 
-<!-- FOOTER -->
+<!-- ========================================================
+     FOOTER
+     ======================================================== -->
+
 <footer>
   <div class="container">
     <div class="foot__grid">
       <div class="foot__brand">
-        <span class="brand__name">TURCO<span class="dot">.</span></span>
+        <span class="brand__name" style="font-family:var(--font-display);font-size:2.5rem">TURCO<span class="brand__dot">.</span></span>
         <p>Personal Trainer laureato in Scienze Motorie. Allenamenti in presenza a Casal Velino (SA) e coaching online in tutta Italia.</p>
       </div>
       <div class="foot__col">
@@ -637,119 +1360,180 @@ footer{padding:3rem 0 2rem;border-top:1px solid var(--line);margin-top:2rem}
       </div>
     </div>
     <div class="foot__bottom">
-      © <span id="year"></span> Andrea Turco · Tutti i diritti riservati · Casal Velino (SA) · P.IVA da inserire
+      <span>© <span id="y"></span> Andrea Turco · Tutti i diritti riservati</span>
+      <span>Casal Velino (SA) · P.IVA da inserire</span>
     </div>
   </div>
 </footer>
 
-<!-- FLOATING DIRECT BUTTON -->
+<!-- ========================================================
+     DIRECT BUTTON
+     ======================================================== -->
+
 <aside class="direct" id="direct" aria-label="Contatti rapidi">
   <div class="direct__list" id="directList">
-    <a href="https://wa.me/393287625772" class="direct__item" target="_blank" rel="noopener">
-      <span class="ico whatsapp">💬</span>WhatsApp
+    <a href="https://wa.me/393287625772" class="direct__item direct__item--wa" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"/></svg></span>
+      WhatsApp
     </a>
-    <a href="mailto:andrea.turco1234@gmail.com" class="direct__item">
-      <span class="ico email">✉</span>Email
+    <a href="mailto:andrea.turco1234@gmail.com" class="direct__item direct__item--mail">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+      Email
     </a>
-    <a href="https://www.instagram.com/andrea_xtr" class="direct__item" target="_blank" rel="noopener">
-      <span class="ico insta">📷</span>Instagram
+    <a href="https://www.instagram.com/andrea_xtr" class="direct__item direct__item--ig" target="_blank" rel="noopener">
+      <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></span>
+      Instagram
     </a>
   </div>
-  <button class="direct__toggle" id="directToggle" aria-expanded="false" aria-label="Apri contatti rapidi">
+  <button class="direct__toggle" id="directToggle" aria-expanded="false" aria-controls="directList" aria-label="Apri contatti rapidi">
     <span class="direct__pulse" aria-hidden="true"></span>
-    <span style="position:relative;z-index:1;font-size:1.8rem;line-height:1">+</span>
+    <svg class="ico-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+    <svg class="ico-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
   </button>
 </aside>
 
-<!-- BACK TO TOP -->
+<!-- ========================================================
+     BACK TO TOP
+     ======================================================== -->
+
 <a href="#top" class="to-top" id="toTop" aria-label="Torna su">
-  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
 </a>
 
 <script>
 (function(){
   'use strict';
-  // NAV SCROLL
-  const nav=document.getElementById('nav');
-  const toTop=document.getElementById('toTop');
-  window.addEventListener('scroll',()=>{
-    nav.classList.toggle('is-scrolled',window.scrollY>8);
-    toTop.classList.toggle('is-visible',window.scrollY>600);
-  },{passive:true});
 
-  // MOBILE NAV
-  const navToggle=document.getElementById('navToggle');
-  const navMenu=document.getElementById('navMenu');
-  navToggle.addEventListener('click',()=>{
-    const open=navMenu.classList.toggle('is-open');
-    navToggle.setAttribute('aria-expanded',String(open));
-    navToggle.textContent=open?'✕':'☰';
+  // ============ THEME TOGGLE ============
+  const root = document.documentElement;
+  const stored = localStorage.getItem('turco-theme');
+  if(stored) root.setAttribute('data-theme', stored);
+  const themeBtn = document.getElementById('themeToggle');
+  themeBtn.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    localStorage.setItem('turco-theme', next);
   });
-  navMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+
+  // ============ STICKY NAV STATE ============
+  const nav = document.getElementById('nav');
+  const onScroll = () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 8);
+    toTop.classList.toggle('is-visible', window.scrollY > 600);
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+
+  // ============ MOBILE NAV ============
+  const navToggle = document.getElementById('navToggle');
+  const navMenu = document.getElementById('navMenu');
+  navToggle.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('is-open');
+    document.body.classList.toggle('is-nav-open', open);
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Chiudi menu' : 'Apri menu');
+  });
+  navMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
     navMenu.classList.remove('is-open');
+    document.body.classList.remove('is-nav-open');
     navToggle.setAttribute('aria-expanded','false');
-    navToggle.textContent='☰';
   }));
 
-  // SCROLL SPY
-  const sections=document.querySelectorAll('main section[id]');
-  const navLinks=navMenu.querySelectorAll('a');
-  const spy=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){navLinks.forEach(l=>l.classList.toggle('is-active',l.getAttribute('href')==='#'+e.target.id));}});
-  },{rootMargin:'-40% 0px -55% 0px'});
-  sections.forEach(s=>spy.observe(s));
+  // ============ SCROLL SPY (active link) ============
+  const sections = document.querySelectorAll('main section[id]');
+  const navLinks = navMenu.querySelectorAll('a');
+  const spy = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        navLinks.forEach(l => l.classList.toggle('is-active', l.getAttribute('href') === '#'+e.target.id));
+      }
+    });
+  }, {rootMargin:'-40% 0px -55% 0px'});
+  sections.forEach(s => spy.observe(s));
 
-  // REVEAL
-  const reveals=document.querySelectorAll('.reveal');
-  const rev=new IntersectionObserver((entries)=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('is-in');rev.unobserve(e.target);}});
-  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
-  reveals.forEach(el=>rev.observe(el));
+  // ============ SCROLL REVEAL ============
+  const reveals = document.querySelectorAll('.reveal');
+  const rev = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting){
+        e.target.classList.add('is-in');
+        rev.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -8% 0px'});
+  reveals.forEach(el => rev.observe(el));
 
-  // DIRECT BUTTON
-  const direct=document.getElementById('direct');
-  const directToggle=document.getElementById('directToggle');
-  directToggle.addEventListener('click',()=>{
-    const open=direct.classList.toggle('is-open');
-    directToggle.setAttribute('aria-expanded',String(open));
+  // ============ BACK TO TOP ============
+  const toTop = document.getElementById('toTop');
+  toTop.addEventListener('click', (e) => {
+    e.preventDefault();
+    window.scrollTo({top:0, behavior: matchMedia('(prefers-reduced-motion:reduce)').matches ? 'auto' : 'smooth'});
   });
-  document.addEventListener('click',(e)=>{
-    if(!direct.contains(e.target)&&direct.classList.contains('is-open')){
+
+  // ============ DIRECT BUTTON ============
+  const direct = document.getElementById('direct');
+  const directToggle = document.getElementById('directToggle');
+  directToggle.addEventListener('click', () => {
+    const open = direct.classList.toggle('is-open');
+    directToggle.setAttribute('aria-expanded', String(open));
+    directToggle.setAttribute('aria-label', open ? 'Chiudi contatti rapidi' : 'Apri contatti rapidi');
+  });
+  document.addEventListener('click', (e) => {
+    if(!direct.contains(e.target) && direct.classList.contains('is-open')){
       direct.classList.remove('is-open');
       directToggle.setAttribute('aria-expanded','false');
     }
   });
 
-  // FORM
-  const form=document.getElementById('quickForm');
-  const setError=(field,msg)=>{
-    field.classList.toggle('has-error',!!msg);
-    const box=field.querySelector('.error-msg');
-    if(box) box.textContent=msg||'';
+  // ============ FORM VALIDATION ============
+  const form = document.getElementById('quickForm');
+  const setError = (field, msg) => {
+    field.classList.toggle('has-error', !!msg);
+    const box = field.querySelector('.error-msg');
+    if(box) box.textContent = msg || '';
   };
-  const validators={
-    name:(v)=>v.trim().length<2?'Inserisci un nome valido.':'',
-    contact:(v)=>{const t=v.trim();if(!t)return'Inserisci email o numero.';return(/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t)||/^[+\d][\d\s().-]{7,}$/.test(t))?'':'Email o numero non valido.';},
-    goal:(v)=>v.trim().length<10?'Raccontami in almeno 10 caratteri il tuo obiettivo.':''
+  const validators = {
+    name: (v) => v.trim().length < 2 ? 'Inserisci un nome valido.' : '',
+    contact: (v) => {
+      const t = v.trim();
+      if(!t) return 'Inserisci email o numero.';
+      const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(t);
+      const isPhone = /^[+\d][\d\s().-]{7,}$/.test(t);
+      return (isEmail || isPhone) ? '' : 'Email o numero non valido.';
+    },
+    goal: (v) => v.trim().length < 10 ? 'Raccontami in almeno 10 caratteri il tuo obiettivo.' : ''
   };
-  form.querySelectorAll('input,textarea').forEach(inp=>{
-    inp.addEventListener('blur',()=>setError(inp.closest('.field'),validators[inp.name](inp.value)));
-    inp.addEventListener('input',()=>{const f=inp.closest('.field');if(f.classList.contains('has-error'))setError(f,validators[inp.name](inp.value));});
+  const getField = (input) => input.closest('.field');
+  form.querySelectorAll('input,textarea').forEach(inp => {
+    inp.addEventListener('blur', () => setError(getField(inp), validators[inp.name](inp.value)));
+    inp.addEventListener('input', () => { if(getField(inp).classList.contains('has-error')) setError(getField(inp), validators[inp.name](inp.value)); });
   });
-  form.addEventListener('submit',(e)=>{
+  form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let ok=true;
-    form.querySelectorAll('input,textarea').forEach(inp=>{const err=validators[inp.name](inp.value);setError(inp.closest('.field'),err);if(err)ok=false;});
-    if(!ok){form.querySelector('.has-error input,.has-error textarea')?.focus();return;}
-    const d=new FormData(form);
-    const url='https://wa.me/393287625772?text='+encodeURIComponent(`Ciao Andrea, sono ${d.get('name')}.\nContatto: ${d.get('contact')}\nObiettivo: ${d.get('goal')}`);
+    let ok = true;
+    form.querySelectorAll('input,textarea').forEach(inp => {
+      const err = validators[inp.name](inp.value);
+      setError(getField(inp), err);
+      if(err) ok = false;
+    });
+    if(!ok){
+      form.querySelector('.has-error input,.has-error textarea')?.focus();
+      return;
+    }
+    const data = new FormData(form);
+    const name = data.get('name');
+    const contact = data.get('contact');
+    const goal = data.get('goal');
+    const text = `Ciao Andrea, sono ${name}.\nContatto: ${contact}\nObiettivo: ${goal}`;
+    const url = 'https://wa.me/393287625772?text=' + encodeURIComponent(text);
     form.classList.add('is-sent');
-    window.open(url,'_blank','noopener');
+    window.open(url, '_blank', 'noopener');
   });
 
-  // YEAR
-  document.getElementById('year').textContent=new Date().getFullYear();
-  nav.classList.add('is-scrolled');
+  // ============ FOOTER YEAR ============
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Initial call
+  onScroll();
 })();
 </script>
 
