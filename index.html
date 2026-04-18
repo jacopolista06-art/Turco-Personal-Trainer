@@ -1,11 +1,11 @@
 <!doctype html>
 
-<html lang="it" data-theme="dark">
+<html lang="it">
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 <meta name="theme-color" content="#0a0a0a" />
-<meta name="color-scheme" content="dark light" />
+<meta name="color-scheme" content="dark" />
 
 <!-- SEO -->
 
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="it_IT" />
 <meta property="og:title" content="TURCO · Personal Trainer a Casal Velino & Online" />
 <meta property="og:description" content="Allenamenti in presenza, schede personalizzate e coaching online. Risultati reali, metodo scientifico. Prenota ora." />
-<meta property="og:image" content="images/hero.jpg" />
+<meta property="og:image" content="images/hero.JPG" />
 <meta property="og:url" content="https://example.com/" />
 
 <!-- Twitter -->
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="TURCO · Personal Trainer" />
 <meta name="twitter:description" content="Personal Trainer a Casal Velino (SA) e online. Metodo, risultati, zero scuse." />
-<meta name="twitter:image" content="images/hero.jpg" />
+<meta name="twitter:image" content="images/hero.JPG" />
 
 <!-- Favicon inline (niente richieste extra) -->
 
@@ -50,7 +50,7 @@
   "@context": "https://schema.org",
   "@type": ["LocalBusiness","HealthAndBeautyBusiness","SportsActivityLocation"],
   "name": "TURCO Personal Trainer",
-  "image": "images/hero.jpg",
+  "image": "images/hero.JPG",
   "description": "Personal Trainer a Casal Velino (SA) e online. Allenamenti in presenza, schede personalizzate, coaching 30 giorni.",
   "email": "andrea.turco1234@gmail.com",
   "telephone": "+39 328 762 5772",
@@ -133,73 +133,10 @@ ul{list-style:none}
   --nav-h:70px;
 }
 
-/* LIGHT theme override — accent lime mantenuto, fondo chiaro caldo */
-html[data-theme="light"]{
-  --bg:#fafaf7;
-  --bg-elev:#ffffff;
-  --bg-soft:#f0f0ec;
-  --surface:#ffffff;
-  --line:rgba(10,10,10,.1);
-  --line-strong:rgba(10,10,10,.28);
-  --text:#0a0a0a;
-  --text-dim:#4a4a4a;
-  --text-mute:#868686;
-  --accent:#0a0a0a;           /* nero diventa l'accent di azione (CTA nere con lime interno) */
-  --accent-ink:#c5ff00;       /* lime come ink sui pulsanti */
-  --accent-glow:rgba(10,10,10,.25);
-}
-/* Elementi decorativi: in light usiamo il lime come highlight forte */
-html[data-theme="light"] .highlight-mark{background:#c5ff00;color:#0a0a0a}
-html[data-theme="light"] .brand__dot{color:#0a0a0a}
-/* Hero title: l'outline in light diventa nero solido (non ci sono più sfondi scuri) */
-html[data-theme="light"] .hero__title .accent{color:#0a0a0a;background:#c5ff00;padding:0 .1em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
-/* Eyebrow in light: linea nera al posto della lime */
-html[data-theme="light"] .eyebrow::before{background:#0a0a0a}
-/* Method cards number in light */
-html[data-theme="light"] .method__num{color:#0a0a0a}
-html[data-theme="light"] .method__card:hover{background:#f0f0ec}
-/* Hero meta icon / credentials icon in light: nere */
-html[data-theme="light"] .hero__meta svg,
-html[data-theme="light"] .about__cred svg{color:#0a0a0a}
-/* Hero stats in light: numeri neri */
-html[data-theme="light"] .hero__stats dt{color:#0a0a0a}
-/* Plan features icon in light: lime su sfondo nero del featured, nere sugli altri */
-html[data-theme="light"] .plan:not(.plan--featured) .plan__li svg{color:#0a0a0a}
-html[data-theme="light"] .plan:not(.plan--featured) .plan__price{color:#0a0a0a}
-/* Tape marquee in light: resta lime (è una banda decorativa) */
-/* FAQ icon + in light: nera */
-html[data-theme="light"] details.faq summary::after{color:#0a0a0a}
-html[data-theme="light"] details.faq[open]{border-color:#0a0a0a}
-/* Testi in light: avatar gradient diverso */
-html[data-theme="light"] .testi__avatar{
-  background:linear-gradient(135deg,#c5ff00 0%,#0a0a0a 100%);
-  color:#0a0a0a;
-}
-html[data-theme="light"] .testi__card::before{color:#0a0a0a}
-/* About stamp in light */
-html[data-theme="light"] .about__stamp span{color:#0a0a0a;font-weight:900}
-html[data-theme="light"] .about__media::after{border-color:#0a0a0a}
-/* To-top button in light: più contrasto */
-html[data-theme="light"] .to-top:hover{border-color:#0a0a0a;color:#0a0a0a}
-/* Plan featured mantiene lime come accent perché sfondo è nero */
-html[data-theme="light"] .plan--featured .plan__li svg{color:#c5ff00}
-html[data-theme="light"] .plan--featured .plan__price{color:#f5f5f5}
-/* Hero media frame in light */
-html[data-theme="light"] .hero__media::before{border-color:rgba(10,10,10,.25)}
-html[data-theme="light"] .hero__media__badge{background:#c5ff00;color:#0a0a0a}
-/* Nav in light: sfondo bianco */
-html[data-theme="light"] .nav{background:transparent}
-html[data-theme="light"] .nav.is-scrolled{background:rgba(250,250,247,.9)}
 @media (max-width:860px){
-  html[data-theme="light"] .nav{background:var(--bg)}
-  html[data-theme="light"] .nav.is-scrolled{background:var(--bg)}
+  .nav{background:var(--bg)}
+  .nav.is-scrolled{background:var(--bg)}
 }
-/* Footer in light */
-html[data-theme="light"] .foot__col a:hover{color:#0a0a0a;text-decoration:underline;text-underline-offset:3px}
-/* Button ghost in light */
-html[data-theme="light"] .btn--ghost{color:#0a0a0a}
-html[data-theme="light"] .btn--ghost:hover{--_bg:#0a0a0a;--_ink:#c5ff00;border-color:#0a0a0a}
-
 body{
   font-family:var(--font-body);
   color:var(--text);
@@ -210,12 +147,6 @@ body{
     radial-gradient(1200px 600px at 90% -10%,rgba(197,255,0,.06),transparent 60%),
     radial-gradient(900px 500px at -10% 30%,rgba(197,255,0,.04),transparent 60%);
 }
-html[data-theme="light"] body{
-  background-image:
-    radial-gradient(1200px 600px at 90% -10%,rgba(197,255,0,.35),transparent 60%),
-    radial-gradient(900px 500px at -10% 30%,rgba(10,10,10,.04),transparent 60%);
-}
-
 /* Grain overlay globale (dà texture premium) */
 body::before{
   content:"";
@@ -287,7 +218,6 @@ body::before{
 .btn:hover svg{transform:translateX(4px)}
 .btn--ghost{--_bg:transparent;--_ink:var(--text);border:1.5px solid var(--line-strong)}
 .btn--ghost:hover{--_bg:var(--text);--_ink:var(--bg);border-color:var(--text)}
-html[data-theme="light"] .btn--ghost:hover{--_bg:var(--text);--_ink:#c5ff00}
 .btn--sm{padding:.7rem 1.1rem;font-size:var(--step--1)}
 
 /* Divider animato */
@@ -435,7 +365,6 @@ html[data-theme="light"] .btn--ghost:hover{--_bg:var(--text);--_ink:#c5ff00}
   -webkit-text-stroke:2px var(--text);
   color:transparent;
 }
-html[data-theme="light"] .hero__title .outline{-webkit-text-stroke-color:var(--text)}
 .hero__title .accent{color:var(--accent)}
 .hero__title .tilted{display:inline-block;transform:rotate(-2deg) translateY(-.05em)}
 
@@ -642,15 +571,11 @@ html[data-theme="light"] .hero__title .outline{-webkit-text-stroke-color:var(--t
   box-shadow:var(--shadow-glow);
 }
 .plan--featured:hover{transform:scale(1.03) translateY(-4px)}
-html[data-theme="light"] .plan--featured{background:#0a0a0a;color:#f5f5f5}
 .plan--featured .plan__name,
 .plan--featured .plan__price,
 .plan--featured .plan__li{color:inherit}
 .plan--featured .plan__desc,
 .plan--featured .plan__unit{color:rgba(245,245,245,.75)}
-html[data-theme="light"] .plan--featured .plan__desc,
-html[data-theme="light"] .plan--featured .plan__unit{color:rgba(245,245,245,.75)}
-
 .plan__badge{
   position:absolute;top:-14px;left:50%;transform:translateX(-50%);
   background:var(--accent);color:var(--accent-ink);
@@ -768,6 +693,13 @@ details.faq > div{
 .cta-final p{max-width:48ch;margin-top:1.2rem;color:rgba(245,245,245,.72);font-size:var(--step-1)}
 .cta-final .eyebrow{color:rgba(245,245,245,.7) !important}
 .cta-final__ctas{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+/* FIX: i bottoni dentro CTA finale devono mantenere i colori del brand, non ereditare */
+.cta-final .btn{background:#c5ff00;color:#0a0a0a}
+.cta-final .btn svg{color:#0a0a0a}
+.cta-final .btn--ghost{background:transparent;color:#f5f5f5;border:1.5px solid rgba(245,245,245,.3)}
+.cta-final .btn--ghost svg{color:#f5f5f5}
+.cta-final .btn--ghost:hover{background:#f5f5f5;color:#0a0a0a;border-color:#f5f5f5}
+.cta-final .btn--ghost:hover svg{color:#0a0a0a}
 .cta-final::after{
   content:"T";
   position:absolute;right:-4rem;bottom:-8rem;z-index:-1;
@@ -822,11 +754,6 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:4rem}
   text-decoration:none;
 }
 /* In light mode rimane scuro con bordo lime per massimo contrasto */
-html[data-theme="light"] .direct__item{
-  background:#0a0a0a;color:#f5f5f5;
-  border-color:rgba(197,255,0,.4);
-  box-shadow:0 10px 28px rgba(0,0,0,.35),0 0 0 1px rgba(255,255,255,.1) inset;
-}
 .direct__item:hover{transform:translateX(-3px);border-color:var(--accent);box-shadow:0 14px 36px rgba(0,0,0,.6)}
 .direct__item .ico{
   width:34px;height:34px;border-radius:999px;
@@ -947,9 +874,6 @@ html[data-theme="light"] .direct__item{
 </nav>
 
 <div class="nav__actions">
-  <button class="icon-btn" id="themeToggle" aria-label="Cambia tema chiaro/scuro" title="Tema">
-    <svg class="ico-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
   <a href="#pacchetti" class="btn btn--sm nav__cta-desktop">Scegli il piano
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
   </a>
@@ -1042,7 +966,7 @@ html[data-theme="light"] .direct__item{
   </div>
 
   <div class="hero__media reveal" data-delay="2">
-    <img src="images/hero.jpg" alt="Andrea Turco, personal trainer" loading="eager" decoding="async" width="520" height="650" onerror="this.style.opacity=.7;this.alt='Carica images/hero.jpg'" class="hero__media__img" />
+    <img src="images/hero.JPG" alt="Andrea Turco, personal trainer" loading="eager" decoding="async" width="520" height="650" onerror="this.style.opacity=.7;this.alt='Carica images/hero.JPG'" class="hero__media__img" />
     <div class="hero__media__badge" aria-hidden="true">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
       <div><strong>FIT</strong><span>Certified</span></div>
@@ -1118,7 +1042,7 @@ html[data-theme="light"] .direct__item{
         <div class="about__stamp" aria-hidden="true">
           DR. <span>SCIENZE</span> MOTORIE · UNISA ·
         </div>
-        <img src="images/about.jpg" alt="Andrea Turco, laureato in Scienze Motorie presso l'Università di Salerno" loading="lazy" decoding="async" width="440" height="586" onerror="this.alt='Carica images/about.jpg'" />
+        <img src="images/about.JPG" alt="Andrea Turco, laureato in Scienze Motorie presso l'Università di Salerno" loading="lazy" decoding="async" width="440" height="586" onerror="this.alt='Carica images/about.JPG'" />
       </div>
 
 ```
@@ -1458,17 +1382,6 @@ html[data-theme="light"] .direct__item{
 <script>
 (function(){
   'use strict';
-
-  // ============ THEME TOGGLE ============
-  const root = document.documentElement;
-  const stored = localStorage.getItem('turco-theme');
-  if(stored) root.setAttribute('data-theme', stored);
-  const themeBtn = document.getElementById('themeToggle');
-  themeBtn.addEventListener('click', () => {
-    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-    root.setAttribute('data-theme', next);
-    localStorage.setItem('turco-theme', next);
-  });
 
   // ============ STICKY NAV STATE ============
   const nav = document.getElementById('nav');
