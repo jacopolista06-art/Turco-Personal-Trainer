@@ -398,6 +398,9 @@ footer{background:#0a0a0a!important;border-top:1px solid #2e2e2e;padding:2.5rem;
 
 <script>
 (function(){
+  // Force scroll to top on every page load
+  window.scrollTo(0,0);
+  if(history.scrollRestoration) history.scrollRestoration='manual';
   // Cursor
   if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
     var c=document.getElementById('cursor'),r=document.getElementById('cursor-ring');
