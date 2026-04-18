@@ -5,9 +5,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Andrea Turco — Personal Trainer</title>
+<script>window.scrollTo(0,0);if(history.scrollRestoration)history.scrollRestoration='manual';</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{background:#0a0a0a;color:#f5f0eb;scroll-behavior:smooth}
+html{background:#0a0a0a;color:#f5f0eb}
 body{background:#0a0a0a;color:#f5f0eb;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
 button{color:inherit;font-family:inherit}
@@ -400,7 +401,9 @@ footer{background:#0a0a0a!important;border-top:1px solid #2e2e2e;padding:2.5rem;
 (function(){
   // Force scroll to top on every page load
   window.scrollTo(0,0);
-  if(history.scrollRestoration) history.scrollRestoration='manual';
+  if(history.scrollRestoration)history.scrollRestoration='manual';
+  // Add smooth scroll only after page is at top
+  setTimeout(function(){document.documentElement.style.scrollBehavior='smooth';},100);
   // Cursor
   if(window.matchMedia('(hover:hover) and (pointer:fine)').matches){
     var c=document.getElementById('cursor'),r=document.getElementById('cursor-ring');
