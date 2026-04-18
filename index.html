@@ -22,7 +22,7 @@
 <meta property="og:locale" content="it_IT" />
 <meta property="og:title" content="TURCO · Personal Trainer a Casal Velino & Online" />
 <meta property="og:description" content="Allenamenti in presenza, schede personalizzate e coaching online. Risultati reali, metodo scientifico. Prenota ora." />
-<meta property="og:image" content="images/hero.JPG" />
+<meta property="og:image" content="hero.JPG" />
 <meta property="og:url" content="https://example.com/" />
 
 <!-- Twitter -->
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="TURCO · Personal Trainer" />
 <meta name="twitter:description" content="Personal Trainer a Casal Velino (SA) e online. Metodo, risultati, zero scuse." />
-<meta name="twitter:image" content="images/hero.JPG" />
+<meta name="twitter:image" content="hero.JPG" />
 
 <!-- Favicon inline (niente richieste extra) -->
 
@@ -50,7 +50,7 @@
   "@context": "https://schema.org",
   "@type": ["LocalBusiness","HealthAndBeautyBusiness","SportsActivityLocation"],
   "name": "TURCO Personal Trainer",
-  "image": "images/hero.JPG",
+  "image": "hero.JPG",
   "description": "Personal Trainer a Casal Velino (SA) e online. Allenamenti in presenza, schede personalizzate, coaching 30 giorni.",
   "email": "andrea.turco1234@gmail.com",
   "telephone": "+39 328 762 5772",
@@ -417,18 +417,19 @@ body::before{
   transform:rotate(-2.5deg);
   z-index:1;
 }
-/* Picture/img nelle sezioni hero/about riempiono il contenitore mantenendo ratio */
-.hero__media picture,
-.about__media picture{display:block;width:100%;height:100%;position:relative;z-index:2}
-.hero__media picture img{
+/* Immagini nelle sezioni hero/about: riempiono il contenitore mantenendo ratio */
+.hero__media__img{
+  position:relative;z-index:2;
   width:100%;height:100%;
   object-fit:cover;object-position:center 30%;
   border-radius:var(--r-lg);
   filter:contrast(1.05) saturate(.9);
   background:linear-gradient(135deg,#151515 0%,#0a0a0a 100%);
 }
-.about__media picture img{
-  width:100%;height:100%;object-fit:cover;
+.about__media__img{
+  position:relative;z-index:2;
+  width:100%;height:100%;
+  object-fit:cover;
   border-radius:var(--r-lg);
   filter:contrast(1.05);
   background:linear-gradient(135deg,#2a2a2a 0%,#141414 100%);
@@ -978,13 +979,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:4rem}
   </div>
 
   <div class="hero__media reveal" data-delay="2">
-    <picture>
-      <source srcset="images/hero.JPG" />
-      <source srcset="images/hero.jpg" />
-      <source srcset="hero.JPG" />
-      <source srcset="hero.jpg" />
-      <img src="hero.JPG" alt="Andrea Turco, personal trainer" loading="eager" decoding="async" width="520" height="650" class="hero__media__img" />
-    </picture>
+    <img src="hero.JPG" alt="Andrea Turco, personal trainer" loading="eager" decoding="async" width="520" height="650" class="hero__media__img" />
     <div class="hero__media__badge" aria-hidden="true">
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
       <div><strong>FIT</strong><span>Certified</span></div>
@@ -1060,13 +1055,7 @@ footer{padding:4rem 0 2rem;border-top:1px solid var(--line);margin-top:4rem}
         <div class="about__stamp" aria-hidden="true">
           DR. <span>SCIENZE</span> MOTORIE · UNISA ·
         </div>
-        <picture>
-          <source srcset="images/about.JPG" />
-          <source srcset="images/about.jpg" />
-          <source srcset="about.JPG" />
-          <source srcset="about.jpg" />
-          <img src="about.JPG" alt="Andrea Turco, laureato in Scienze Motorie presso l'Università di Salerno" loading="lazy" decoding="async" width="440" height="586" />
-        </picture>
+        <img src="about.JPG" alt="Andrea Turco, laureato in Scienze Motorie presso l'Università di Salerno" loading="lazy" decoding="async" width="440" height="586" class="about__media__img" />
       </div>
 
 ```
